@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command:*)",
+      "Bash(powershell:*)",
+      "Bash(dir:*)",
+      "Bash(git -C \"C:\\\\repos\\\\awesome-ai-skills\" log --oneline -10)",
+      "Bash(git -C \"C:\\\\repos\\\\awesome-ai-skills\" tag)",
+      "Bash(git -C \"C:\\\\repos\\\\awesome-ai-skills\" branch:*)"
+    ]
+  }
+}
