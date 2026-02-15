@@ -66,19 +66,6 @@ jobs:
           echo "should_release=false" >> $GITHUB_OUTPUT
         fi
 
-    - name: Create release branch
-      if: steps.version_check.outputs.should_release == 'true'
-      run: |
-        LATEST_TAG="${{ steps.version_check.outputs.latest_tag }}"
-        BRANCH_NAME="releases/$LATEST_TAG"
-
-        git config user.name "github-actions[bot]"
-        git config user.email "github-actions[bot]@users.noreply.github.com"
-        git checkout -b "$BRANCH_NAME" "$LATEST_TAG"
-        git push origin "$BRANCH_NAME"
-
-        echo "Release branch created: $BRANCH_NAME"
-
     - name: Create GitHub Release
       if: steps.version_check.outputs.should_release == 'true'
       env:
@@ -104,7 +91,6 @@ jobs:
         echo "## Release Created" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "- Tag: \`${{ steps.version_check.outputs.latest_tag }}\`" >> $GITHUB_STEP_SUMMARY
-        echo "- Branch: \`releases/${{ steps.version_check.outputs.latest_tag }}\`" >> $GITHUB_STEP_SUMMARY
         echo "- Previous Tag: \`${{ steps.version_check.outputs.previous_tag }}\`" >> $GITHUB_STEP_SUMMARY
 
     - name: Summary (Skipped)
