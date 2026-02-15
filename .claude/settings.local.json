@@ -6,7 +6,10 @@
       "Bash(dir:*)",
       "Bash(git -C \"C:\\\\repos\\\\awesome-ai-skills\" log --oneline -10)",
       "Bash(git -C \"C:\\\\repos\\\\awesome-ai-skills\" tag)",
-      "Bash(git -C \"C:\\\\repos\\\\awesome-ai-skills\" branch:*)"
+      "Bash(git -C \"C:\\\\repos\\\\awesome-ai-skills\" branch:*)",
+      "Bash(ls:*)",
+      "Bash(git -C /c/repos/awesome-ai-skills log --oneline -15)",
+      "Bash(wc:*)"
     ]
   }
 }
