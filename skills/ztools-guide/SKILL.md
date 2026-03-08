@@ -1,31 +1,31 @@
 ---
-name: ntools-guide
-description: Guides how to integrate NTools.ACL and NTools.DTO packages for ChatGPT, DALL-E image generation, file upload (S3), slug generation, email sending, and document validation in a .NET 8 project. Use when the user wants to use AI features, upload files, generate slugs, send emails, or understand NTools integration.
+name: ztools-guide
+description: Guides how to integrate the zTools package for ChatGPT, DALL-E image generation, file upload (S3), slug generation, email sending, and document validation in a .NET 8 project. Use when the user wants to use AI features, upload files, generate slugs, send emails, or understand zTools integration.
 allowed-tools: Read, Grep, Glob, Bash, Write, Edit, Task
 ---
 
-# NTools Integration Guide
+# zTools Integration Guide
 
-You are an expert assistant that helps developers integrate the **NTools.ACL** and **NTools.DTO** NuGet packages for utility services (ChatGPT, DALL-E, file storage, slug generation, email, document validation) in .NET 8 Web API projects.
+You are an expert assistant that helps developers integrate the **zTools** NuGet package for utility services (ChatGPT, DALL-E, file storage, slug generation, email, document validation) in .NET 8 Web API projects.
 
 ## Input
 
 The user may provide a specific question or context as argument: `$ARGUMENTS`
 
-If no argument is provided, present a complete overview of the NTools integration.
+If no argument is provided, present a complete overview of the zTools integration.
 
-When the user asks about NTools, use this knowledge base to provide accurate, contextual guidance.
+When the user asks about zTools, use this knowledge base to provide accurate, contextual guidance.
 
 ---
 
-## NTools.DTO — Data Transfer Objects
+## zTools — Data Transfer Objects
 
-**Install:** `dotnet add package NTools.DTO --version 0.2.3`
+**Install:** `dotnet add package zTools --version 0.3.1`
 
 ### Settings
 
 ```csharp
-public class NToolSetting { public string ApiUrl { get; set; } }
+public class zToolsetting { public string ApiUrl { get; set; } }
 public class ChatGPTSetting { public string ApiUrl; public string ApiKey; public string Model; }
 public class MailerSendSetting { /* MailerSend API config */ }
 public class S3Setting { /* S3 bucket, credentials, endpoint config */ }
@@ -72,9 +72,9 @@ public class MailerErrorInfo { /* Error handling */ }
 
 ---
 
-## NTools.ACL — Anti-Corruption Layer
+## zTools — Anti-Corruption Layer
 
-**Install:** `dotnet add package NTools.ACL --version 0.2.2`
+**Install:** `dotnet add package zTools --version 0.3.1`
 
 ### IChatGPTClient
 
@@ -123,22 +123,22 @@ Implementations: `ChatGPTClient`, `StringClient`, `FileClient`, `MailClient`, `D
 
 ```json
 {
-  "NTools": {
+  "zTools": {
     "ApiURL": "http://localhost:5001"
   }
 }
 ```
 
-Docker: use `"ApiURL": "http://ntools-api:80"`.
+Docker: use `"ApiURL": "http://ztools-api:80"`.
 
 ### 2. Register Services (DI)
 
 ```csharp
-using NTools.ACL;
-using NTools.ACL.Interfaces;
-using NTools.DTO.Settings;
+using zTools.ACL;
+using zTools.ACL.Interfaces;
+using zTools.DTO.Settings;
 
-services.Configure<NToolSetting>(configuration.GetSection("NTools"));
+services.Configure<zToolsetting>(configuration.GetSection("zTools"));
 services.AddHttpClient();
 
 // Register only the clients you need
@@ -165,7 +165,7 @@ public async Task<string> AskQuestion(string question)
 ### ChatGPT — Conversation with System Prompt
 
 ```csharp
-using NTools.DTO.ChatGPT;
+using zTools.DTO.ChatGPT;
 
 public async Task<string> GenerateContent(string userPrompt)
 {
@@ -374,7 +374,7 @@ public async Task<ArticleResult> CreateArticleWithAI(string prompt, bool withIma
 
 | Issue | Cause | Solution |
 |-------|-------|----------|
-| ChatGPT returns empty | NTools API unreachable | Verify `NTools:ApiURL` in appsettings |
+| ChatGPT returns empty | zTools API unreachable | Verify `zTools:ApiURL` in appsettings |
 | DALL-E URL expired | Temporary URLs not persisted | Download and re-upload to S3 via `IFileClient` |
 | `GenerateSlugAsync` empty | Empty input | Validate input before calling |
 | File upload fails | File too large | Add `[RequestSizeLimit]` to controller |
