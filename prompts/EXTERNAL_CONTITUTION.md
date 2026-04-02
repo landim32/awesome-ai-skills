@@ -1,0 +1,20 @@
+Adicione o uso de bibliotecas externas:
+- NAuth
+	- Para autenticação e gerenciamento de usuários use o NAuth
+	- Se precisar procure em:
+		- para o backend no diretório c:\repos\NAuth\NAuth
+		- para o frontend no diretório c:\repos\NAuth\nauth-react
+	- Use o pacote nuget NAuth para o backend
+	- E o pacote npm chamado nauth-react para o frontend
+- zTools
+	- Para o uso de S3, emails ou IA use o zTools
+	- Se precisar procure no diretório c:\repos\zTools
+	- Use o pacote nuget zTools
+- BazzucaMedia
+    - Para a comunicação com redes sociais use o projeto BazzucaMedia
+	- Se precisar procure em:
+		- para o backend no diretório c:\repos\Bazzuca\BazzucaMedia
+		- para o frontend no diretório c:\repos\Bazzuca\bazzuca-react
+	- E o pacote npm chamado bazzuca-react para o frontend
+	- Tudo referente a acessar redes sociais deverá ser desenvolvido no BazzucaMedia
+	- Não altere o BazzucaMedia diretamente
