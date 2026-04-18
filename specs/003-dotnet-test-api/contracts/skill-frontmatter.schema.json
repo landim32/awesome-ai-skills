@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/landim32/awesome-ai-skills/specs/003-dotnet-test-api/contracts/skill-frontmatter.schema.json",
+  "title": "SkillFrontmatter",
+  "description": "Frontmatter schema for skill files under skills/. Aligned with the convention in skills/dotnet-test/SKILL.md and skills/dotnet-architecture/SKILL.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "description", "allowed-tools", "user-invocable"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
+      "description": "Kebab-case skill identifier. MUST equal the enclosing folder name."
+    },
+    "description": {
+      "type": "string",
+      "minLength": 80,
+      "description": "One paragraph stating when to invoke and scope boundaries. English only."
+    },
+    "allowed-tools": {
+      "type": "string",
+      "pattern": "^([A-Za-z][A-Za-z0-9_]*)(, ?[A-Za-z][A-Za-z0-9_]*)*$",
+      "description": "Comma-separated allowlist of tools the skill may use at runtime."
+    },
+    "user-invocable": {
+      "type": "boolean",
+      "description": "If true, the skill can be invoked directly via slash-command; if false, only through an agent."
+    }
+  },
+  "examples": [
+    {
+      "name": "dotnet-test-api",
+      "description": "Creates and maintains a <Solution>.ApiTests project for external API integration tests using xUnit + Flurl.Http + FluentAssertions with a shared IAsyncLifetime fixture. Generic JWT Bearer default; NAuth/OAuth2/API-key presets documented. Not for unit tests (use dotnet-test).",
+      "allowed-tools": "Read, Grep, Glob, Bash, Write, Edit, Task",
+      "user-invocable": true
+    }
+  ]
+}
