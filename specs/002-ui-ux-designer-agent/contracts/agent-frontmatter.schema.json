@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/landim32/awesome-ai-skills/specs/002-ui-ux-designer-agent/contracts/agent-frontmatter.schema.json",
+  "title": "AgentFrontmatter",
+  "description": "Schema for the YAML frontmatter of agent files under agents/. Enforces Constitution v2.0.1 Principle V.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "description", "tools"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
+      "description": "Kebab-case agent identifier. MUST equal the filename without extension."
+    },
+    "description": {
+      "type": "string",
+      "minLength": 40,
+      "description": "One-line summary of what the agent does and what it is NOT for. English only."
+    },
+    "tools": {
+      "type": "string",
+      "description": "Comma-separated allowlist of tool names. Implicit inheritance is forbidden by Principle V.",
+      "pattern": "^([A-Za-z][A-Za-z0-9_]*)(, ?[A-Za-z][A-Za-z0-9_]*)*$"
+    },
+    "model": {
+      "type": "string",
+      "description": "Optional model pin. Omitted in this repository's agents by convention."
+    }
+  },
+  "examples": [
+    {
+      "name": "ui-ux-pro-max-designer",
+      "description": "UI/UX designer agent. Invoke for design direction, tokens, mockups, component specs, banners, slides, logos, CIP. Does NOT write .tsx React code — defers to frontend-react-developer.",
+      "tools": "Read, Grep, Glob, Bash, Write, Edit, Task, Skill, WebFetch"
+    }
+  ]
+}

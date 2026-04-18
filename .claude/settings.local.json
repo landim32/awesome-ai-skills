@@ -10,7 +10,10 @@
       "Bash(ls:*)",
       "Bash(git -C /c/repos/awesome-ai-skills log --oneline -15)",
       "Bash(wc:*)",
-      "Bash(npx --yes @mermaid-js/mermaid-cli --version 2>/dev/null || echo \"not installed\")"
+      "Bash(npx --yes @mermaid-js/mermaid-cli --version 2>/dev/null || echo \"not installed\")",
+      "Bash(mkdir -p ~/.claude/commands)",
+      "Bash(cp commands/install.md ~/.claude/commands/install.md)",
+      "Read(//c/Users/rodri/.claude/commands/**)"
     ]
   }
 }
