@@ -1,0 +1,24 @@
+{
+  "name": "awesome-ai-skills",
+  "description": "Curated Claude Code skills, agents, and commands for .NET/C# backend, .NET MAUI mobile, and React + TypeScript frontend workflows.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Rodrigo Landim Carneiro",
+    "url": "https://github.com/landim32"
+  },
+  "homepage": "https://github.com/landim32/awesome-ai-skills",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/landim32/awesome-ai-skills.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "skills",
+    "agents",
+    "dotnet",
+    "maui",
+    "react",
+    "typescript"
+  ]
+}
