@@ -12,7 +12,11 @@ A curated collection of Claude AI skills — reusable instructional guides and t
 - **workflows/** — Reusable GitHub Actions workflow templates (version-tag, create-release, npm-publish).
 - **prompts/** — Prompt templates for specific use cases.
 - **.github/workflows/** — CI/CD pipelines that consume the workflow templates.
-- **collect-skills.ps1** — PowerShell script that scans `C:\repos` for `.claude/skills/` directories in other projects and copies new skills into this repo's `skills/` folder.
+- **scripts/** — Repository utility scripts. `scripts/collect-skills.ps1` scans `C:\repos` for `.claude/skills/` directories in other projects and copies new skills into this repo's `skills/` folder. Also `scripts/copy-dependency.ps1`, `scripts/push-skill.ps1`, `scripts/replace-skill.ps1`.
+- **agents/** — Role-based agent definitions (Claude Code flat-file convention, `agents/<agent-name>.md`).
+- **rules/** — Machine-readable rules and constraints.
+- **commands/** — Named invokable commands.
+- **docs/** — Human-facing documentation (bilingual: EN or PT-BR with `.pt-BR.md` suffix).
 
 ## Versioning and Releases
 
@@ -29,7 +33,7 @@ Tag prefix accepts both `v` and `V` (e.g., `v1.2.3`). The CI pipeline auto-tags 
 ## Collecting Skills from Other Projects
 
 ```powershell
-powershell -File collect-skills.ps1
+powershell -File scripts/collect-skills.ps1
 ```
 
 This scans all repos under `C:\repos` for `.claude/skills/` directories and copies any skill not already present into `skills/`.

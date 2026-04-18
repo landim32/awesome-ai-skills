@@ -1,0 +1,10 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+*.bak
+
+# Editor metadata
+.vscode/
+.idea/
