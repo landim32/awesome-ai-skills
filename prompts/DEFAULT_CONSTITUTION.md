@@ -84,13 +84,13 @@ Estas skills cobrem em detalhe:
 
 | Elemento | Convenção | Exemplo |
 |---|---|---|
-| Namespaces | PascalCase | `Viralt.Domain.Services` |
+| Namespaces | PascalCase | `{Nome do Projeto}.Domain.Services` |
 | Classes / Interfaces | PascalCase | `CampaignService`, `ICampaignRepository` |
 | Métodos | PascalCase | `GetById()`, `MapToDto()` |
 | Propriedades | PascalCase | `CampaignId`, `CreatedAt` |
 | Campos privados | _camelCase | `_repository`, `_context` |
 | Constantes | UPPER_CASE | `BUCKET_NAME` |
-| Namespaces | File-scoped | `namespace Viralt.API;` |
+| Namespaces | File-scoped | `namespace {Nome do Projeto}.API;` |
 
 ### Frontend (TypeScript/React)
 
@@ -155,7 +155,7 @@ Estas skills cobrem em detalhe:
 
 | Variável | Obrigatória | Descrição |
 |---|---|---|
-| `ConnectionStrings__ViraltContext` | Sim | Connection string PostgreSQL |
+| `ConnectionStrings__{Nome do Projeto}Context` | Sim | Connection string PostgreSQL |
 | `ASPNETCORE_ENVIRONMENT` | Sim | Development, Docker, Production |
 
 ### Frontend

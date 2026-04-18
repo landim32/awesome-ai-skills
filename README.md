@@ -64,7 +64,15 @@ awesome-ai-skills/
 │   └── npm-publish.yml              # NPM package publishing
 ├── prompts/                         # Prompt templates
 ├── .github/workflows/               # CI/CD pipelines for this repo
-├── collect-skills.ps1               # Skill collector script
+├── scripts/                         # Repository utility scripts
+│   ├── collect-skills.ps1           # Skill collector script
+│   ├── copy-dependency.ps1
+│   ├── push-skill.ps1
+│   └── replace-skill.ps1
+├── agents/                          # Role-based agent definitions
+├── rules/                           # Machine-readable rules
+├── commands/                        # Named invokable commands
+├── docs/                            # Human-facing documentation
 ├── GitVersion.yml                   # Semantic versioning configuration
 ├── CLAUDE.md                        # Claude Code guidance file
 └── LICENSE                          # MIT License
@@ -95,7 +103,7 @@ Claude Code will automatically detect and use the skills when relevant to your r
 The collector script scans all repositories under `C:\repos` for `.claude/skills/` directories and imports any new skills:
 
 ```powershell
-powershell -File collect-skills.ps1
+powershell -File scripts/collect-skills.ps1
 ```
 
 ---
