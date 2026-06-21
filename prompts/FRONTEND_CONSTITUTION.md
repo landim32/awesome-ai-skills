@@ -32,7 +32,7 @@ Esta skill cobre em detalhe:
 | TypeScript | 5.x | Tipagem estática |
 | React Router | 6.x | Roteamento SPA |
 | Vite | 6.x | Build toolchain |
-| Bootstrap | 5.x | Sistema de grid e componentes base |
+| Tailwind | 5.x | Sistema de grid e componentes base |
 | i18next | 25.x | Internacionalização |
 | Axios | 1.x | HTTP client (legado) |
 | Fetch API | Nativo | HTTP client (novos serviços) |
