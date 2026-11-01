@@ -24,9 +24,11 @@ Uses **GitVersion** (ContinuousDelivery mode) configured in `GitVersion.yml`. Ve
 
 | Prefix | Bump |
 |---|---|
-| `major:` or `breaking:` | Major |
+| `major:` or `breaking:`, or any type with `!` (e.g. `feat(api)!:`) | Major |
 | `feat:` or `feature:` or `minor:` | Minor |
 | `fix:` or `patch:` | Patch |
+
+An optional scope in parentheses is accepted (e.g. `feat(skills):`, `fix(workflows):`). Any other prefix falls back to the branch default (Patch on `main`). This config is the same as the `gitversion` skill template (`skills/gitversion/templates/GitVersion.yml`).
 
 Tag prefix accepts both `v` and `V` (e.g., `v1.2.3`). The CI pipeline auto-tags on push to main and creates a GitHub Release (plus a `releases/vX.Y.Z` branch) for every new version — major, minor or patch.
 
