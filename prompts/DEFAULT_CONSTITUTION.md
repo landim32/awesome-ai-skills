@@ -38,8 +38,6 @@ Estas skills cobrem em detalhe:
 | .NET | 8.0 | Runtime e framework principal |
 | Entity Framework Core | 9.x | ORM e migrações |
 | PostgreSQL | Latest | Banco de dados relacional |
-| NAuth | Latest | Autenticação (Basic token) |
-| zTools | Latest | Upload S3, e-mail (MailerSend), slugs |
 | Swashbuckle | 8.x | Swagger / OpenAPI |
 
 ### Frontend
@@ -50,7 +48,7 @@ Estas skills cobrem em detalhe:
 | TypeScript | 5.x | Tipagem estática |
 | React Router | 6.x | Roteamento SPA |
 | Vite | 6.x | Build toolchain |
-| Bootstrap | 5.x | Sistema de grid e componentes base |
+| Tailwind CSS | 4.x | Estilização utility-first (layout, grid e componentes) |
 | i18next | 25.x | Internacionalização |
 | Axios | 1.x | HTTP client (legado) |
 | Fetch API | Nativo | HTTP client (novos serviços) |
@@ -58,6 +56,7 @@ Estas skills cobrem em detalhe:
 ### Regras de Stack
 
 - **Vite é o bundler obrigatório** — NÃO usar CRA, Webpack manual, ou outros bundlers.
+- **Tailwind CSS é o framework de estilização obrigatório** — NÃO usar Bootstrap, React-Bootstrap, Material UI ou outros frameworks CSS de componentes.
 - **NÃO** introduzir ORMs alternativos (Dapper, etc.) — EF Core é o único ORM permitido.
 - **NÃO** adicionar bibliotecas de state management (Redux, Zustand, MobX) — Context API é o padrão.
 - **NÃO** executar comandos `docker` ou `docker compose` no ambiente local — Docker não está acessível.
@@ -134,10 +133,10 @@ Estas skills cobrem em detalhe:
 
 | Aspecto | Padrão |
 |---|---|
-| Esquema | Basic Authentication via NAuth |
+| Esquema | Basic Authentication |
 | Header | `Authorization: Basic {token}` |
 | Storage (frontend) | localStorage key `"login-with-metamask:auth"` |
-| Handler | `NAuthHandler` registrado no DI |
+| Handler | `AuthenticationHandler` customizado registrado no DI |
 | Proteção de rotas | Atributo `[Authorize]` nos controllers |
 
 ### Regras de Segurança

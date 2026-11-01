@@ -34,8 +34,6 @@ Estas skills cobrem em detalhe:
 | .NET | 8.0 | Runtime e framework principal |
 | Entity Framework Core | 9.x | ORM e migrações |
 | PostgreSQL | Latest | Banco de dados relacional |
-| NAuth | Latest | Autenticação (Basic token) |
-| zTools | Latest | Upload S3, e-mail (MailerSend), slugs |
 | Swashbuckle | 8.x | Swagger / OpenAPI |
 
 ### Regras de Stack
@@ -88,9 +86,9 @@ Estas skills cobrem em detalhe:
 
 | Aspecto | Padrão |
 |---|---|
-| Esquema | Basic Authentication via NAuth |
+| Esquema | Basic Authentication |
 | Header | `Authorization: Basic {token}` |
-| Handler | `NAuthHandler` registrado no DI |
+| Handler | `AuthenticationHandler` customizado registrado no DI |
 | Proteção de rotas | Atributo `[Authorize]` nos controllers |
 
 ### Regras de Segurança

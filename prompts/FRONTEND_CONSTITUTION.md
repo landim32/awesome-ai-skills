@@ -32,7 +32,7 @@ Esta skill cobre em detalhe:
 | TypeScript | 5.x | Tipagem estática |
 | React Router | 6.x | Roteamento SPA |
 | Vite | 6.x | Build toolchain |
-| Tailwind | 5.x | Sistema de grid e componentes base |
+| Tailwind CSS | 4.x | Estilização utility-first (layout, grid e componentes) |
 | i18next | 25.x | Internacionalização |
 | Axios | 1.x | HTTP client (legado) |
 | Fetch API | Nativo | HTTP client (novos serviços) |
@@ -40,6 +40,7 @@ Esta skill cobre em detalhe:
 ### Regras de Stack
 
 - **Vite é o bundler obrigatório** — NÃO usar CRA, Webpack manual, ou outros bundlers.
+- **Tailwind CSS é o framework de estilização obrigatório** — NÃO usar Bootstrap, React-Bootstrap, Material UI ou outros frameworks CSS de componentes.
 - **NÃO** adicionar bibliotecas de state management (Redux, Zustand, MobX) — Context API é o padrão.
 - **NÃO** executar comandos `docker` ou `docker compose` no ambiente local — Docker não está acessível.
 - Variáveis de ambiente frontend usam prefixo `VITE_` (padrão Vite). **NÃO** usar `REACT_APP_`.
