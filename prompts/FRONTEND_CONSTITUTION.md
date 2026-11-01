@@ -79,7 +79,6 @@ Esta skill cobre em detalhe:
 | Aspecto | Padrão |
 |---|---|
 | Header | `Authorization: Basic {token}` |
-| Storage | localStorage key `"login-with-metamask:auth"` |
 
 ### Regras de Segurança
 

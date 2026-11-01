@@ -135,7 +135,6 @@ Estas skills cobrem em detalhe:
 |---|---|
 | Esquema | Basic Authentication |
 | Header | `Authorization: Basic {token}` |
-| Storage (frontend) | localStorage key `"login-with-metamask:auth"` |
 | Handler | `AuthenticationHandler` customizado registrado no DI |
 | Proteção de rotas | Atributo `[Authorize]` nos controllers |
 
