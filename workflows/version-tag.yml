@@ -65,7 +65,7 @@ jobs:
     
     - name: Summary
       run: |
-        echo "## ??? Version Tag Created" >> $GITHUB_STEP_SUMMARY
+        echo "## 🏷️ Version Tag Created" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "- Version: \`${{ steps.gitversion.outputs.nuGetVersionV2 }}\`" >> $GITHUB_STEP_SUMMARY
         echo "- SemVer: \`${{ steps.gitversion.outputs.semVer }}\`" >> $GITHUB_STEP_SUMMARY

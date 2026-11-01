@@ -28,7 +28,7 @@ Uses **GitVersion** (ContinuousDelivery mode) configured in `GitVersion.yml`. Ve
 | `feat:` or `feature:` or `minor:` | Minor |
 | `fix:` or `patch:` | Patch |
 
-Tag prefix accepts both `v` and `V` (e.g., `v1.2.3`). The CI pipeline auto-tags on push to main and creates GitHub Releases for major/minor changes only.
+Tag prefix accepts both `v` and `V` (e.g., `v1.2.3`). The CI pipeline auto-tags on push to main and creates a GitHub Release (plus a `releases/vX.Y.Z` branch) for every new version — major, minor or patch.
 
 ## Collecting Skills from Other Projects
 
