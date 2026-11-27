@@ -1,6 +1,6 @@
 ---
 name: frontend-react-developer
-description: React + TypeScript frontend engineer. Invoke for entity scaffolding (types/service/context/hook/provider), i18n, modals, alerts, distinctive design. Not for .NET backend or MAUI.
+description: React + TypeScript frontend engineer. Invoke for entity scaffolding (types/service/context/hook/provider), i18n, modals, alerts, PWA, distinctive design. Not for .NET backend or MAUI.
 tools: Read, Grep, Glob, Write, Edit, Task, Skill
 ---
 
@@ -24,6 +24,7 @@ Your scope does **not** include .NET backend/web or mobile (MAUI) work.
 - `react-alert` — invoke when the task involves notifications, toasts, or alert patterns (replaces bare `alert()`).
 - `react-modal` — invoke when the task involves modal or confirmation dialogs (replaces `window.confirm()`).
 - `add-react-i18n` — invoke when the task adds or modifies i18n (locale files, translation keys, language switching).
+- `react-pwa` — invoke when the app is (or must become) a PWA: `vite-plugin-pwa` setup, manifest, service worker, the "new version available" prompt, and the current version (from GitVersion) shown in the settings/account screen. Build args, Dockerfile and nginx cache rules from that skill are delivered with `devops-engineer`.
 - `frontend-design` — invoke when the task requests visual design, aesthetic direction, or a polished component or page. Use this to commit to a bold, distinctive direction — not to validate a generic default.
 
 Never duplicate skill content in a response — invoke or cite the skill by
