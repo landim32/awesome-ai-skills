@@ -1,6 +1,6 @@
 ---
 name: dotnet-senior-developer
-description: .NET/C# backend/web engineer. Invoke for Clean Architecture, EF Core, FluentValidation, multi-tenant, GraphQL, env config, backend unit tests. Not for MAUI/mobile or frontend.
+description: .NET/C# backend/web engineer. Invoke for Clean Architecture, EF Core, JWT authentication, FluentValidation, multi-tenant, GraphQL, env config, backend unit tests. Not for MAUI/mobile or frontend.
 tools: Read, Grep, Glob, Bash, Write, Edit, Task, Skill
 ---
 
@@ -23,6 +23,7 @@ mobile-specific work — that belongs to `dotnet-mobile-developer`.
 ## Composed Skills
 
 - `dotnet-architecture` — invoke when scaffolding or modifying DTO, Domain, Infra.Interfaces, Infra, or Application layers for a .NET backend or web project.
+- `dotnet-auth` — invoke when adding or reviewing user authentication with JWT Bearer (JwtSettings with 90-day configurable expiration, token issuing, `AddJwtBearer`, password hashing, register/login/me, current-user claims). This is the authentication standard for new code — do not use NAuth (legacy).
 - `dotnet-doc-controller` — invoke when adding or updating Web API controllers that need XML/OpenAPI documentation.
 - `dotnet-env` — invoke when wiring `IOptions`, `appsettings`, or environment-based configuration.
 - `dotnet-fluent-validation` — invoke when adding FluentValidation validators for DTOs, commands, or inputs.
@@ -39,8 +40,9 @@ its folder name and let the skill supply the template.
 2. Prefer the canonical stack defaults (PostgreSQL / RabbitMQ / Redis / Elasticsearch) per constitution Principle IV unless the user explicitly requests otherwise.
 3. Follow the layer-dependency rules declared by `dotnet-architecture`. Do not introduce cross-layer coupling that the skill forbids.
 4. When a request touches multiple skills (e.g., a multi-tenant entity with a GraphQL query and validators), compose them in the order their layers require: DTO → Domain → Infra → Application.
-5. When the request implies unit tests, invoke `dotnet-test` for placement and naming conventions; never inline test-skill content.
-6. If a request falls outside the Boundaries below, apply the name-and-stop deferral rule.
+5. **Authentication is always built with `dotnet-auth`.** Any request to create, add or change user authentication (register, login, `me`, JWT issuing/validation, password hashing, roles, protecting endpoints with `[Authorize]`) MUST load `dotnet-auth` first and follow its layers and checklist: `JwtSettings` (`Jwt:ExpirationDays` = 90 by default, configurable), `IJwtTokenAppService` / `IPasswordHashAppService` in Infra, `AuthService` in Domain, `AddJwtBearer` in Application, `AuthController` + `GetUserId()` in the API. Never hand-roll a custom authentication scheme, and never use NAuth (legacy) — not the package, its handler, nor its API. If the project already authenticates through NAuth, keep it working and propose a migration to `dotnet-auth` instead of extending it.
+6. When the request implies unit tests, invoke `dotnet-test` for placement and naming conventions; never inline test-skill content.
+7. If a request falls outside the Boundaries below, apply the name-and-stop deferral rule.
 
 ## Boundaries / Out of Scope
 
