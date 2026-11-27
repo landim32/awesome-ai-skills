@@ -16,7 +16,7 @@ The repository also includes reusable **GitHub Actions workflow templates** for 
 
 - 🏗️ **dotnet-arch-entity** — Full entity scaffold following Clean Architecture (DTO → Domain → Infra → Application → API) with EF Core Code First, AutoMapper, and Repository pattern
 - 📄 **dotnet-doc-controller** — Comprehensive API documentation generator for .NET REST controllers with Swagger/OpenAPI
-- 🔐 **nauth-guide** — NAuth.ACL and NAuth.DTO integration for user authentication, JWT handling, and RBAC in .NET 8
+- 🔐 **nauth-guide** *(legacy)* — NAuth.ACL and NAuth.DTO integration, kept only for maintaining existing projects; for new .NET authentication use `dotnet-auth`
 - 🤖 **ntools-guide** — NTools integration for ChatGPT, DALL-E, S3 file upload, slug generation, email sending, and document validation in .NET 8
 - ⚛️ **react-arch** — Complete React entity architecture: TypeScript types, service layer, context/provider, custom hooks, and provider registration
 - 🪟 **react-modal** — Modal dialog creation using Radix UI Dialog primitives with Tailwind CSS styling and accessibility patterns
@@ -52,7 +52,7 @@ awesome-ai-skills/
 │   ├── dotnet-arch-entity/          # .NET Clean Architecture entity scaffold
 │   ├── dotnet-doc-controller/       # .NET API controller documentation
 │   ├── frontend-design/             # Frontend design principles
-│   ├── nauth-guide/                 # .NET authentication integration
+│   ├── nauth-guide/                 # NAuth integration (legacy)
 │   ├── ntools-guide/                # .NET tools (AI, S3, email, etc.)
 │   ├── react-alert/                 # Toast/alert notifications
 │   ├── react-arch/                  # React entity architecture

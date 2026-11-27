@@ -1,10 +1,15 @@
 ---
 name: nauth-guide
-description: Guides how to integrate the NAuth package for user authentication in a .NET 8 project. Use when the user wants to add authentication, configure NAuth, use IUserClient, or understand the NAuth authentication flow.
+description: "LEGACY — NAuth is a legacy system; do not use it for new authentication. Use only to maintain or migrate an existing project that already depends on NAuth (NAuth package, IUserClient). For new .NET authentication use the dotnet-auth skill."
 allowed-tools: Read, Grep, Glob, Bash, Write, Edit, Task
 ---
 
-# NAuth Authentication Integration Guide
+# NAuth Authentication Integration Guide (LEGACY)
+
+> ⚠️ **Legacy.** NAuth is a legacy system and MUST NOT be used in new projects or new features.
+> For user authentication in .NET use the **`dotnet-auth`** skill (own JWT Bearer, 90-day
+> configurable expiration). Use this guide only to understand, maintain or migrate away from an
+> existing NAuth integration. When asked to *add* authentication, stop and point to `dotnet-auth`.
 
 You are an expert assistant that helps developers integrate the **NAuth** NuGet package for user authentication in .NET 8 Web API projects.
 
