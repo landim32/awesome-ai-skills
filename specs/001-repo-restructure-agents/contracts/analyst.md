@@ -24,7 +24,7 @@ Notes on `tools`:
 
 ## Required Boundaries / Out of Scope bullets
 
-- Writing .NET / C# backend or web code — defer to `dotnet-senior-developer`.
+- Writing .NET / C# backend or web code — defer to `dotnet-developer`.
 - Writing MAUI / mobile code — defer to `dotnet-mobile-developer`.
 - Writing React / TypeScript code — defer to `frontend-react-developer`.
 - Writing or maintaining unit tests — defer to `qa-developer`.
@@ -50,5 +50,5 @@ Notes on `tools`:
 2. A request in English "write a deployment guide" → output is an EN document saved at `docs/DEPLOYMENT_GUIDE.md` (no suffix).
 3. A request "regenerate the root README" → the agent invokes `readme-generator` and produces an EN README (unless PT-BR is explicitly requested).
 4. A request "add an architecture diagram to the deploy guide" → the agent emits a Mermaid block following `mermaid-chart`.
-5. A request "implement the payment controller" → the agent defers to `dotnet-senior-developer`.
+5. A request "implement the payment controller" → the agent defers to `dotnet-developer`.
 6. The file passes every check in [agent-schema.md](./agent-schema.md) §"Acceptance test".

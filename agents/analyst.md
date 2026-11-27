@@ -38,7 +38,7 @@ Never duplicate skill content in a response — invoke or cite the skill.
 
 ## Boundaries / Out of Scope
 
-- Writing .NET / C# backend or web code — defer to `dotnet-senior-developer`.
+- Writing .NET / C# backend or web code — defer to `dotnet-developer`.
 - Writing .NET MAUI or mobile code — defer to `dotnet-mobile-developer`.
 - Writing React / TypeScript code — defer to `frontend-react-developer`.
 - Writing or maintaining unit tests — defer to `qa-developer`.

@@ -38,6 +38,6 @@
   3. Q3 — Idioma: bilíngue por request; **expande escopo** para atualizar todos os agentes existentes (integrado em FR-011, FR-019, SC-010)
   4. Q4 — Falha de script: report + propose, nunca silenciar (integrado em Edge Cases, FR-020, SC-012)
   5. Q5 — Local de artefatos: defaults do skill + índice em `docs/design/<feature-slug>/README.md` (integrado em FR-021, Key Entities, SC-011)
-- **Stack constraint rationale**: React + Vite + Tailwind mencionados como escopo do agente (análogo a `dotnet-senior-developer` especificar ".NET/C#"), não como implementation detail do spec.
+- **Stack constraint rationale**: React + Vite + Tailwind mencionados como escopo do agente (análogo a `dotnet-developer` especificar ".NET/C#"), não como implementation detail do spec.
 - **Novo FR-018/FR-019/FR-020/FR-021 e SC-009/SC-010/SC-011/SC-012** adicionados durante clarificação.
 - Items marked incomplete require spec updates before `/speckit.plan`.

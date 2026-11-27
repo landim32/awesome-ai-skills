@@ -73,16 +73,16 @@ description: "Task list for feature 001-repo-restructure-agents"
 
 ---
 
-## Phase 4: User Story 2 — .NET Senior Developer agent available (Priority: P2)
+## Phase 4: User Story 2 — .NET Developer agent available (Priority: P2)
 
-**Goal**: Authoring `agents/dotnet-senior-developer.md` so backend/web work has a dedicated agent composing the seven `dotnet-*` skills.
+**Goal**: Authoring `agents/dotnet-developer.md` so backend/web work has a dedicated agent composing the seven `dotnet-*` skills.
 
 **Independent Test**: Follow `quickstart.md` §3a. Expected: the agent invokes `dotnet-architecture` for a "Customer entity" request, defers with "use `dotnet-mobile-developer`" on a MAUI prompt, and defers to `qa-developer` on a tests-only prompt.
 
 ### Implementation for User Story 2
 
-- [x] T016 [P] [US2] Author `agents/dotnet-senior-developer.md` exactly per `specs/001-repo-restructure-agents/contracts/dotnet-senior-developer.md` — frontmatter (`name: dotnet-senior-developer`, `description` ≤ 200 chars, `tools: Read, Grep, Glob, Bash, Write, Edit, Task, Skill`), body sections H1 / Role & Scope / Composed Skills (7 bullets listing the `dotnet-*` skill folders) / Default Behavior / Boundaries (defer to `dotnet-mobile-developer`, `frontend-react-developer`, `qa-developer`, `analyst`) / Output Language (`English`).
-- [x] T017 [US2] Manually verify the file against `contracts/agent-schema.md` §"Acceptance test" (filename regex, frontmatter parse, `name` == stem, `tools` non-empty, six body sections in order) and against `contracts/dotnet-senior-developer.md` §"Acceptance tests specific to this agent" (positive and negative prompts).
+- [x] T016 [P] [US2] Author `agents/dotnet-developer.md` exactly per `specs/001-repo-restructure-agents/contracts/dotnet-developer.md` — frontmatter (`name: dotnet-developer`, `description` ≤ 200 chars, `tools: Read, Grep, Glob, Bash, Write, Edit, Task, Skill`), body sections H1 / Role & Scope / Composed Skills (7 bullets listing the `dotnet-*` skill folders) / Default Behavior / Boundaries (defer to `dotnet-mobile-developer`, `frontend-react-developer`, `qa-developer`, `analyst`) / Output Language (`English`).
+- [x] T017 [US2] Manually verify the file against `contracts/agent-schema.md` §"Acceptance test" (filename regex, frontmatter parse, `name` == stem, `tools` non-empty, six body sections in order) and against `contracts/dotnet-developer.md` §"Acceptance tests specific to this agent" (positive and negative prompts).
 
 **Checkpoint**: User Story 2 is independently functional.
 
@@ -96,7 +96,7 @@ description: "Task list for feature 001-repo-restructure-agents"
 
 ### Implementation for User Story 3
 
-- [x] T018 [P] [US3] Author `agents/frontend-react-developer.md` exactly per `specs/001-repo-restructure-agents/contracts/frontend-react-developer.md` — frontmatter (`name: frontend-react-developer`, `description` ≤ 200 chars, `tools: Read, Grep, Glob, Write, Edit, Task, Skill`), body H1 / Role & Scope / Composed Skills (6 bullets: `react-architecture`, `react-arch`, `react-alert`, `react-modal`, `add-react-i18n`, `frontend-design`) / Default Behavior / Boundaries (defer to `dotnet-senior-developer`, `dotnet-mobile-developer`, `qa-developer`, `analyst`) / Output Language (`English`).
+- [x] T018 [P] [US3] Author `agents/frontend-react-developer.md` exactly per `specs/001-repo-restructure-agents/contracts/frontend-react-developer.md` — frontmatter (`name: frontend-react-developer`, `description` ≤ 200 chars, `tools: Read, Grep, Glob, Write, Edit, Task, Skill`), body H1 / Role & Scope / Composed Skills (6 bullets: `react-architecture`, `react-arch`, `react-alert`, `react-modal`, `add-react-i18n`, `frontend-design`) / Default Behavior / Boundaries (defer to `dotnet-developer`, `dotnet-mobile-developer`, `qa-developer`, `analyst`) / Output Language (`English`).
 - [x] T019 [US3] Manually verify against `contracts/agent-schema.md` and `contracts/frontend-react-developer.md` acceptance tests.
 
 **Checkpoint**: User Story 3 is independently functional.
@@ -137,11 +137,11 @@ description: "Task list for feature 001-repo-restructure-agents"
 
 **Goal**: Authoring `agents/dotnet-mobile-developer.md` so MAUI mobile work has a dedicated agent composing `maui-architecture` plus shared backend skills.
 
-**Independent Test**: Follow `quickstart.md` §3b. Expected: end-to-end mobile entity request scaffolds backend layers via `dotnet-architecture` first, then MAUI layers via `maui-architecture`; pure-backend prompt defers to `dotnet-senior-developer`; APK build prompt cites `workflows/build-apk.yml`.
+**Independent Test**: Follow `quickstart.md` §3b. Expected: end-to-end mobile entity request scaffolds backend layers via `dotnet-architecture` first, then MAUI layers via `maui-architecture`; pure-backend prompt defers to `dotnet-developer`; APK build prompt cites `workflows/build-apk.yml`.
 
 ### Implementation for User Story 6
 
-- [x] T024 [P] [US6] Author `agents/dotnet-mobile-developer.md` exactly per `specs/001-repo-restructure-agents/contracts/dotnet-mobile-developer.md` — frontmatter (`name: dotnet-mobile-developer`, `description` ≤ 200 chars, `tools: Read, Grep, Glob, Bash, Write, Edit, Task, Skill`), body H1 / Role & Scope / Composed Skills (`maui-architecture` primary, plus `dotnet-architecture`, `dotnet-fluent-validation`, `dotnet-env`, `dotnet-test`) / Default Behavior (including explicit reference to `workflows/build-apk.yml` for APK CI per FR-018) / Boundaries (defer to `dotnet-senior-developer`, `frontend-react-developer`, `qa-developer`, `analyst`) / Output Language (`English`).
+- [x] T024 [P] [US6] Author `agents/dotnet-mobile-developer.md` exactly per `specs/001-repo-restructure-agents/contracts/dotnet-mobile-developer.md` — frontmatter (`name: dotnet-mobile-developer`, `description` ≤ 200 chars, `tools: Read, Grep, Glob, Bash, Write, Edit, Task, Skill`), body H1 / Role & Scope / Composed Skills (`maui-architecture` primary, plus `dotnet-architecture`, `dotnet-fluent-validation`, `dotnet-env`, `dotnet-test`) / Default Behavior (including explicit reference to `workflows/build-apk.yml` for APK CI per FR-018) / Boundaries (defer to `dotnet-developer`, `frontend-react-developer`, `qa-developer`, `analyst`) / Output Language (`English`).
 - [x] T025 [US6] Manually verify against `contracts/agent-schema.md` and `contracts/dotnet-mobile-developer.md` acceptance tests. Specifically confirm the acceptance test "request 'how do we build the APK?' → cites `workflows/build-apk.yml`" passes.
 
 **Checkpoint**: User Story 6 is independently functional. All five agents now exist.
@@ -188,7 +188,7 @@ description: "Task list for feature 001-repo-restructure-agents"
 
 ```bash
 # Five agent files — zero shared state, all parallelizable:
-Task: "Author agents/dotnet-senior-developer.md per contract"     # T016
+Task: "Author agents/dotnet-developer.md per contract"     # T016
 Task: "Author agents/frontend-react-developer.md per contract"    # T018
 Task: "Author agents/qa-developer.md per contract"                # T020
 Task: "Author agents/analyst.md per contract"                     # T022
@@ -213,7 +213,7 @@ After all five files land, the five verification tasks (T017, T019, T021, T023, 
 
 After the MVP, author one agent at a time and validate each independently:
 
-1. T016–T017 — `.NET Senior Developer`
+1. T016–T017 — `.NET Developer`
 2. T018–T019 — `Frontend React Developer`
 3. T020–T021 — `QA Developer`
 4. T022–T023 — `Analyst`

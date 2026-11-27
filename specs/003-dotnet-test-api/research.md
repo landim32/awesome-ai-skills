@@ -58,7 +58,7 @@ A spec não contém `[NEEDS CLARIFICATION]` após `/speckit.clarify`. Esta fase 
 11. `## Adding Tests for a Controller` — como crescer `Controllers/<Name>ControllerTests.cs` + `TestDataHelper.cs` on-demand.
 12. `## Naming Conventions` — `<Method>_<Condition>_ShouldReturn<Expected>`.
 13. `## Running the Tests` — `dotnet test`, env vars, CI.
-14. `## Boundaries` — não modifica produção; defere para `dotnet-senior-developer`; defere para `dotnet-test` para unit tests.
+14. `## Boundaries` — não modifica produção; defere para `dotnet-developer`; defere para `dotnet-test` para unit tests.
 
 **Rationale**:
 - Espelha o fluxo do `dotnet-test/SKILL.md` (Input → Convention → Creating → Adding → Running) para reduzir a curva de aprendizado do usuário que já conhece a skill irmã.

@@ -23,7 +23,7 @@ tools: Read, Grep, Glob, Bash, Write, Edit, Task, Skill
 
 ## Required Boundaries / Out of Scope bullets
 
-- Pure backend/web work with no mobile presentation (e.g., "create a GraphQL endpoint", "build a Web API controller") — defer to `dotnet-senior-developer`.
+- Pure backend/web work with no mobile presentation (e.g., "create a GraphQL endpoint", "build a Web API controller") — defer to `dotnet-developer`.
 - React / TypeScript / web UI — defer to `frontend-react-developer`.
 - Test-only work on existing mobile code — defer to `qa-developer`.
 - Authoring documentation in `docs/` — defer to `analyst`.
@@ -43,7 +43,7 @@ tools: Read, Grep, Glob, Bash, Write, Edit, Task, Skill
 ## Acceptance tests specific to this agent
 
 1. A request "add an entity `Task` end-to-end to the mobile app" → the agent scaffolds DTO/Domain/Infra/Application via `dotnet-architecture` (if missing) then the MAUI layers via `maui-architecture`.
-2. A request "create a GraphQL endpoint for `Task`" → the agent defers to `dotnet-senior-developer`.
+2. A request "create a GraphQL endpoint for `Task`" → the agent defers to `dotnet-developer`.
 3. A request "how do we build and ship the APK?" → the agent cites `workflows/build-apk.yml` and describes inputs/outputs without rewriting the pipeline.
 4. A request "write unit tests for the `TaskViewModel`" → the agent defers to `qa-developer`.
 5. The file passes every check in [agent-schema.md](./agent-schema.md) §"Acceptance test".

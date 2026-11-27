@@ -15,7 +15,7 @@ A spec não possui nenhum marcador `[NEEDS CLARIFICATION]` remanescente após a 
 
 **Rationale**:
 - Constitution §V (Authoring Standards): `name`, `description`, `tools` são obrigatórios; `model` é opcional.
-- Agentes irmãos (`frontend-react-developer.md`, `dotnet-senior-developer.md`, `dotnet-mobile-developer.md`, `qa-developer.md`, `analyst.md`) todos usam exatamente esses três campos.
+- Agentes irmãos (`frontend-react-developer.md`, `dotnet-developer.md`, `dotnet-mobile-developer.md`, `qa-developer.md`, `analyst.md`) todos usam exatamente esses três campos.
 - `model` opcional foi deliberadamente omitido em todos os agentes existentes — manter a ausência preserva consistência e deixa a escolha ao orquestrador.
 
 **Alternatives considered**:
@@ -118,7 +118,7 @@ Respond in the language of the request. Match the user's language (e.g., Portugu
 
 ## Decision 7 — Ordem das seções no corpo do agente
 
-**Decision**: Ordem obrigatória abaixo, espelhando os dois agentes-modelo (`frontend-react-developer`, `dotnet-senior-developer`):
+**Decision**: Ordem obrigatória abaixo, espelhando os dois agentes-modelo (`frontend-react-developer`, `dotnet-developer`):
 
 1. `# UI/UX Pro Max Designer` (H1)
 2. `## Role & Scope`
@@ -132,7 +132,7 @@ Respond in the language of the request. Match the user's language (e.g., Portugu
 - Constitution §V exige Role + Composed Skills + Boundaries; os demais são convenção do repositório.
 
 **Alternatives considered**:
-- Inserir seção `## Stack` separada. Rejeitado: conteúdo de stack cabe dentro de Role & Scope (como o `dotnet-senior-developer` faz para .NET/C#).
+- Inserir seção `## Stack` separada. Rejeitado: conteúdo de stack cabe dentro de Role & Scope (como o `dotnet-developer` faz para .NET/C#).
 - Seção "Examples". Rejeitado: exemplos vivem nos skills; duplicação é proibida por FR-003.
 
 ---

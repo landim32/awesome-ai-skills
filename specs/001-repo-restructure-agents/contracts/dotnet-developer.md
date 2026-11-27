@@ -1,13 +1,13 @@
-# Contract — `dotnet-senior-developer`
+# Contract — `dotnet-developer`
 
 **Schema**: see [agent-schema.md](./agent-schema.md).
-**File**: `agents/dotnet-senior-developer.md`
+**File**: `agents/dotnet-developer.md`
 
 ## Frontmatter values
 
 ```yaml
 ---
-name: dotnet-senior-developer
+name: dotnet-developer
 description: Expert .NET/C# backend and web engineer. Invoke for Clean Architecture scaffolding, EF Core data access, FluentValidation, multi-tenant patterns, GraphQL, environment configuration, and backend unit tests. Not for MAUI/mobile.
 tools: Read, Grep, Glob, Bash, Write, Edit, Task, Skill
 ---

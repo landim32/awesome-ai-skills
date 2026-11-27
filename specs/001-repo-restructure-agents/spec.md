@@ -7,7 +7,7 @@
 **Input**: User description:
 - Reorganize repository files to comply with the constitution.
 - Create agents based on existing skills:
-  - **.NET Senior Developer** — behavior grounded in the `dotnet-*` skills
+  - **.NET Developer** — behavior grounded in the `dotnet-*` skills
     (backend/web scope).
   - **.NET Mobile Developer** — behavior grounded in the `maui-architecture`
     skill plus the shared backend `dotnet-*` skills, covering mobile apps
@@ -39,7 +39,7 @@
   request outside its scope (including cross-stack requests)? → A: **Name
   the correct sibling agent and stop.** The agent MUST declare the request
   out of scope, name the specific sibling agent that owns the scope (e.g.,
-  "this is a backend/web task — use `dotnet-senior-developer`"), and
+  "this is a backend/web task — use `dotnet-developer`"), and
   return without executing the work. No active handoff via the Task tool
   is required, and no split-and-execute behavior is allowed. For
   multi-stack requests, the agent names every sibling that owns a slice.
@@ -92,10 +92,10 @@ a documented new home.
 
 ---
 
-### User Story 2 - .NET Senior Developer agent available (Priority: P2)
+### User Story 2 - .NET Developer agent available (Priority: P2)
 
 As a developer working on **backend/web** tickets, I want to invoke a
-`dotnet-senior-developer` agent that already understands the project's Clean
+`dotnet-developer` agent that already understands the project's Clean
 Architecture conventions, EF Core usage, validation, multi-tenant patterns,
 and environment configuration so that I get expert-level backend output
 without having to cherry-pick individual skills. Mobile/MAUI concerns are
@@ -106,7 +106,7 @@ explicitly out of this agent's scope and belong to the
 (Principle IV). This agent collapses multiple existing skills into a single
 coherent role and delivers the highest immediate value to backend work.
 
-**Independent Test**: Opening `agents/dotnet-senior-developer.md` shows a
+**Independent Test**: Opening `agents/dotnet-developer.md` shows a
 compliant definition file whose description declares its role, scope, and
 boundaries, and whose behavior explicitly delegates to (or composes) the
 `dotnet-architecture`, `dotnet-doc-controller`, `dotnet-env`,
@@ -118,7 +118,7 @@ aligned with those skills.
 **Acceptance Scenarios**:
 
 1. **Given** the `agents/` folder exists, **When** the agent definition is
-   created, **Then** it lives at `agents/dotnet-senior-developer.md` with a
+   created, **Then** it lives at `agents/dotnet-developer.md` with a
    definition file containing required frontmatter (`name`, `description`,
    role, tools, boundaries).
 2. **Given** the `dotnet-*` skills already exist under `skills/`, **When** the
@@ -258,7 +258,7 @@ rest of the stack without overloading the web/backend agent.
 
 **Why this priority**: Mobile apps reuse the backend layers defined by
 `dotnet-architecture` but add a distinct presentation layer covered
-exclusively by `maui-architecture`. A dedicated agent prevents .NET Senior
+exclusively by `maui-architecture`. A dedicated agent prevents .NET
 Developer from conflating web and mobile concerns and keeps MAUI-specific
 output (XAML, ViewModels, Shell) coherent.
 
@@ -287,7 +287,7 @@ declared in `maui-architecture`.
    those layers before producing MAUI-specific artifacts.
 4. **Given** a pure backend/web request (e.g., "create a GraphQL endpoint"),
    **When** the agent responds, **Then** it declares the request out of
-   scope and defers to `dotnet-senior-developer`.
+   scope and defers to `dotnet-developer`.
 5. **Given** a mobile CI/build request, **When** the agent responds, **Then**
    it references the reusable APK build pipeline under `workflows/`
    (e.g., `build-apk.yml`) rather than inventing a new pipeline.
@@ -312,7 +312,7 @@ declared in `maui-architecture`.
   Principle III. If any existing skill carries PT-BR content, it is flagged
   but left in place for this feature; cleanup is out of scope for this spec.
 - **Shared skill ownership** — if a skill is relevant to more than one agent
-  (e.g., `dotnet-test` used by both QA and .NET Senior Developer), each
+  (e.g., `dotnet-test` used by both QA and .NET Developer), each
   agent may reference it without duplication.
 - **Missing skill coverage** — if an agent's declared role implies a
   behavior that no existing skill covers, the agent definition MUST
@@ -359,7 +359,7 @@ declared in `maui-architecture`.
   directly under `agents/`, named `<agent-name>.md` (kebab-case), following
   the Claude Code native agent convention. No per-agent subfolder is used.
   Agent files MUST be:
-  `agents/dotnet-senior-developer.md`, `agents/dotnet-mobile-developer.md`,
+  `agents/dotnet-developer.md`, `agents/dotnet-mobile-developer.md`,
   `agents/frontend-react-developer.md`, `agents/qa-developer.md`,
   `agents/analyst.md`.
 - **FR-009**: Each agent definition file MUST carry YAML frontmatter with
@@ -373,7 +373,7 @@ declared in `maui-architecture`.
 - **FR-011**: Each agent MUST enumerate the existing skills it composes,
   referencing them by skill folder name, and MUST NOT duplicate the
   content of those skills.
-- **FR-012**: The **.NET Senior Developer** agent MUST compose these
+- **FR-012**: The **.NET Developer** agent MUST compose these
   existing skills: `dotnet-architecture`, `dotnet-doc-controller`,
   `dotnet-env`, `dotnet-fluent-validation`, `dotnet-graphql`,
   `dotnet-multi-tenant`, and `dotnet-test`. Its scope is backend/web; MAUI
@@ -384,7 +384,7 @@ declared in `maui-architecture`.
   backend skills for cross-cutting layers: `dotnet-architecture`,
   `dotnet-fluent-validation`, `dotnet-env`, and `dotnet-test`. Backend/web
   concerns that do not touch the mobile presentation layer are out of
-  scope and belong to the `dotnet-senior-developer` agent.
+  scope and belong to the `dotnet-developer` agent.
 - **FR-013**: The **Frontend React Developer** agent MUST compose these
   existing skills: `react-architecture`, `react-arch`, `react-alert`,
   `react-modal`, `add-react-i18n`, and `frontend-design`.
@@ -445,7 +445,7 @@ declared in `maui-architecture`.
   `README.md`, `CLAUDE.md`, or `.github/workflows/`. `workflows/` itself
   is unchanged.
 - **SC-003**: All five required agents exist at exactly these paths:
-  `agents/dotnet-senior-developer.md`, `agents/dotnet-mobile-developer.md`,
+  `agents/dotnet-developer.md`, `agents/dotnet-mobile-developer.md`,
   `agents/frontend-react-developer.md`, `agents/qa-developer.md`,
   `agents/analyst.md`.
 - **SC-004**: Each agent definition's mandatory frontmatter fields
@@ -456,10 +456,10 @@ declared in `maui-architecture`.
 - **SC-005**: Each agent definition references at least the minimum skill
   set declared in FR-012, FR-012b, and FR-013 through FR-015, by folder
   name, with zero duplicated skill content.
-- **SC-008**: The `.NET Senior Developer` and `.NET Mobile Developer`
+- **SC-008**: The `.NET Developer` and `.NET Mobile Developer`
   agents produce no overlapping outputs on identical mobile or backend
   requests: given a mobile request, only the Mobile agent responds
-  substantively; given a pure backend/web request, only the Senior agent
+  substantively; given a pure backend/web request, only the .NET Developer agent
   does. Verified by a reviewer on at least two representative prompts per
   agent.
 - **SC-006**: A sample invocation of each agent on a representative task
@@ -482,7 +482,7 @@ declared in `maui-architecture`.
   It hosts reusable CI/CD pipeline templates and is distinct from
   `scripts/` (which is for local/repo utilities only). No relocation is
   performed.
-- **MAUI belongs to a dedicated mobile agent.** The .NET Senior Developer
+- **MAUI belongs to a dedicated mobile agent.** The .NET Developer
   agent covers backend/web only; MAUI and mobile concerns are owned by the
   `dotnet-mobile-developer` agent introduced in this feature (User Story
   6). The two agents share the backend skills (`dotnet-architecture`,
@@ -494,7 +494,7 @@ declared in `maui-architecture`.
   a constitutional amendment. If the team later wants MAUI listed
   explicitly in Principle IV, that is a separate PATCH-level amendment.
 - **Cross-agent skill sharing is allowed.** A skill may be referenced by
-  more than one agent (e.g., `dotnet-test` by both QA and .NET Senior
+  more than one agent (e.g., `dotnet-test` by both QA and .NET
   Developer). There is no exclusivity constraint.
 - **Existing PT-BR content in English-only folders is out of scope.** If
   legacy skills contain PT-BR content, they are flagged but not cleaned up

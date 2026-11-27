@@ -391,7 +391,7 @@ If any `REPLACE_VIA_ENV_*` placeholder remains in the resolved config at runtime
 
 ## Boundaries
 
-- **Production code**: never modified. If a controller requires changes to be testable, defer to `dotnet-senior-developer` and pause.
+- **Production code**: never modified. If a controller requires changes to be testable, defer to `dotnet-developer` and pause.
 - **Unit tests** of services, factories, domain entities, utilities: out of scope — invoke `dotnet-test` instead.
 - **Non-.NET backends** (Python, Node, Go, Java): out of scope.
 - **.NET Framework legacy** (non-SDK-style csproj, `packages.config`): out of scope — only SDK-style .NET 6/7/8/9 supported.

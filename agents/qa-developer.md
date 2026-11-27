@@ -35,7 +35,7 @@ Never duplicate the composed skills' content in a response — invoke or cite th
 
 ## Boundaries / Out of Scope
 
-- Production code changes (non-test) in the backend/web layers — defer to `dotnet-senior-developer`.
+- Production code changes (non-test) in the backend/web layers — defer to `dotnet-developer`.
 - Production code changes in the MAUI/mobile layer — defer to `dotnet-mobile-developer`.
 - Production code changes in the React/TypeScript frontend — defer to `frontend-react-developer`.
 - Integration tests that require infrastructure not covered by `dotnet-test` — declare the gap and defer to the feature owner.

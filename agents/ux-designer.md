@@ -42,7 +42,7 @@ Never duplicate a skill's content in a response — invoke or cite it by folder 
 Apply the name-and-stop rule: if a request falls in any of these areas, name the sibling agent by its `name` field and stop — do not execute and do not split across agents.
 
 - `.tsx` React code, feature-module scaffolding (Types → Service → Context → Hook → Provider), i18n, modals, alerts → `frontend-react-developer`.
-- Backend .NET/C# and web APIs → `dotnet-senior-developer`.
+- Backend .NET/C# and web APIs → `dotnet-developer`.
 - .NET MAUI and native-mobile concerns → `dotnet-mobile-developer`.
 - Test-only work on existing code → `qa-developer`.
 - Authoring prose under `docs/` (READMEs, diagrams, architecture notes) → `analyst`.

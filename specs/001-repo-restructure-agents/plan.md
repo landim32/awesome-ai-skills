@@ -65,7 +65,7 @@ specs/001-repo-restructure-agents/
 ├── quickstart.md               # Phase 1 output — how to invoke and validate agents
 ├── contracts/                  # Phase 1 output
 │   ├── agent-schema.md         # Shared frontmatter schema + body contract
-│   ├── dotnet-senior-developer.md
+│   ├── dotnet-developer.md
 │   ├── dotnet-mobile-developer.md
 │   ├── frontend-react-developer.md
 │   ├── qa-developer.md
@@ -83,7 +83,7 @@ awesome-ai-skills/
 │   ├── README.md                 # NEW — purpose stub
 │   ├── analyst.md                # NEW — PT-BR default docs author
 │   ├── dotnet-mobile-developer.md# NEW — MAUI-focused
-│   ├── dotnet-senior-developer.md# NEW — backend/web
+│   ├── dotnet-developer.md# NEW — backend/web
 │   ├── frontend-react-developer.md # NEW — React/TS
 │   └── qa-developer.md           # NEW — xUnit tests
 ├── commands/                     # NEW — canonical folder (empty + README.md)

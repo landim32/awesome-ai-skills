@@ -22,7 +22,7 @@ description: "Task list for implementing ui-ux-pro-max-designer agent"
 This feature is documentation-only (AI artifact authoring). All paths are absolute-from-repo-root Windows-style as used in the repo, but forward slashes are accepted.
 
 - Agent file (new): `agents/ui-ux-pro-max-designer.md`
-- Sibling agents (modify only `## Output Language`): `agents/frontend-react-developer.md`, `agents/dotnet-senior-developer.md`, `agents/dotnet-mobile-developer.md`, `agents/qa-developer.md`, `agents/analyst.md`
+- Sibling agents (modify only `## Output Language`): `agents/frontend-react-developer.md`, `agents/dotnet-developer.md`, `agents/dotnet-mobile-developer.md`, `agents/qa-developer.md`, `agents/analyst.md`
 - Contracts (read-only inputs): `specs/002-ui-ux-designer-agent/contracts/agent-frontmatter.schema.json`, `.../output-language.snippet.md`, `.../attribution.snippet.md`
 - Runtime deliveries (NOT created in this PR; agent creates per-feature in runtime): `docs/design/<feature-slug>/README.md`
 
@@ -33,7 +33,7 @@ This feature is documentation-only (AI artifact authoring). All paths are absolu
 **Purpose**: Prerequisite verification — no scaffolding needed since the repo is an established Claude Code artifact repository.
 
 - [X] T001 Verify the 7 composed skills exist (directories `skills/banner-design/`, `skills/brand/`, `skills/design/`, `skills/design-system/`, `skills/slides/`, `skills/ui-styling/`, `skills/ui-ux-pro-max/`), each containing a `SKILL.md`. If any is missing, halt and escalate — the agent cannot compose a skill that doesn't exist.
-- [X] T002 Verify the 5 sibling agents exist: `agents/frontend-react-developer.md`, `agents/dotnet-senior-developer.md`, `agents/dotnet-mobile-developer.md`, `agents/qa-developer.md`, `agents/analyst.md`. Confirm each has a `## Output Language` section currently.
+- [X] T002 Verify the 5 sibling agents exist: `agents/frontend-react-developer.md`, `agents/dotnet-developer.md`, `agents/dotnet-mobile-developer.md`, `agents/qa-developer.md`, `agents/analyst.md`. Confirm each has a `## Output Language` section currently.
 - [X] T003 [P] Verify the 3 contracts exist and are readable: `specs/002-ui-ux-designer-agent/contracts/agent-frontmatter.schema.json`, `specs/002-ui-ux-designer-agent/contracts/output-language.snippet.md`, `specs/002-ui-ux-designer-agent/contracts/attribution.snippet.md`. These drive every subsequent task.
 
 ---
@@ -49,7 +49,7 @@ This feature is documentation-only (AI artifact authoring). All paths are absolu
 - [X] T006 Add H1 `# UI/UX Pro Max Designer` and the 5 empty section headers in the exact order defined in `research.md` §Decision 7: `## Role & Scope`, `## Composed Skills`, `## Default Behavior`, `## Boundaries / Out of Scope`, `## Output Language`. Leave bodies blank for now (except `## Output Language`).
 - [X] T007 Fill `## Output Language` in `agents/ui-ux-pro-max-designer.md` with the exact canonical block from `contracts/output-language.snippet.md`.
 - [X] T008 Fill `## Role & Scope` in `agents/ui-ux-pro-max-designer.md` stating: (a) senior UI/UX designer role; (b) target stack React + Vite + Tailwind with shadcn/ui (FR-013); (c) agent NEVER writes `.tsx` — code is deferred to `frontend-react-developer` (FR-018); (d) out-of-scope areas enumerated at a high level (defer to boundaries section).
-- [X] T009 Fill `## Boundaries / Out of Scope` in `agents/ui-ux-pro-max-designer.md` with the name-and-stop rule and explicit deferrals: `.tsx` code → `frontend-react-developer`; backend .NET → `dotnet-senior-developer`; MAUI/mobile → `dotnet-mobile-developer`; tests-only → `qa-developer`; `docs/` authoring → `analyst`; non-React-ecosystem UI (Vue, Svelte, SwiftUI, Flutter, RN) → out-of-scope without sibling (FR-005, FR-006, FR-016).
+- [X] T009 Fill `## Boundaries / Out of Scope` in `agents/ui-ux-pro-max-designer.md` with the name-and-stop rule and explicit deferrals: `.tsx` code → `frontend-react-developer`; backend .NET → `dotnet-developer`; MAUI/mobile → `dotnet-mobile-developer`; tests-only → `qa-developer`; `docs/` authoring → `analyst`; non-React-ecosystem UI (Vue, Svelte, SwiftUI, Flutter, RN) → out-of-scope without sibling (FR-005, FR-006, FR-016).
 
 **Checkpoint**: Skeleton file exists, passes frontmatter schema, carries attribution and Output Language — user story phases can now add content to `## Composed Skills` and `## Default Behavior`.
 
@@ -152,7 +152,7 @@ This feature is documentation-only (AI artifact authoring). All paths are absolu
 **Purpose**: Apply the canonical `## Output Language` block to the 5 existing agents to enforce the bilingual rule across the repository (SC-010).
 
 - [X] T028 [P] Replace the `## Output Language` section in `agents/frontend-react-developer.md` with the exact canonical block from `specs/002-ui-ux-designer-agent/contracts/output-language.snippet.md`. Leave all other sections, frontmatter, and content untouched.
-- [X] T029 [P] Replace the `## Output Language` section in `agents/dotnet-senior-developer.md` with the exact canonical block from the same snippet. Leave all other sections untouched.
+- [X] T029 [P] Replace the `## Output Language` section in `agents/dotnet-developer.md` with the exact canonical block from the same snippet. Leave all other sections untouched.
 - [X] T030 [P] Replace the `## Output Language` section in `agents/dotnet-mobile-developer.md` with the exact canonical block. Leave all other sections untouched.
 - [X] T031 [P] Replace the `## Output Language` section in `agents/qa-developer.md` with the exact canonical block. Leave all other sections untouched.
 - [X] T032 Replace the `## Output Language` section in `agents/analyst.md` with the exact canonical block AND remove the phrase `Default output is PT-BR; EN only when explicitly requested.` from the frontmatter `description` (keep the rest of the description intact). Rationale in `research.md` §Decision 5. This task is not [P] because it touches both frontmatter and body of the same file.
@@ -219,7 +219,7 @@ This feature is documentation-only (AI artifact authoring). All paths are absolu
 ```bash
 # Launch 4 disjoint file edits in parallel — each replaces one section block:
 Task: "Replace ## Output Language in agents/frontend-react-developer.md"
-Task: "Replace ## Output Language in agents/dotnet-senior-developer.md"
+Task: "Replace ## Output Language in agents/dotnet-developer.md"
 Task: "Replace ## Output Language in agents/dotnet-mobile-developer.md"
 Task: "Replace ## Output Language in agents/qa-developer.md"
 

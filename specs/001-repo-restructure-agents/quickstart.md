@@ -42,7 +42,7 @@ Expected:
 README.md
 analyst.md
 dotnet-mobile-developer.md
-dotnet-senior-developer.md
+dotnet-developer.md
 frontend-react-developer.md
 qa-developer.md
 ```
@@ -55,7 +55,7 @@ Open one agent file and confirm the frontmatter matches its contract in
 In Claude Code, use the Task tool (or the agent picker) and address the
 agent by its `name`.
 
-### 3a. `dotnet-senior-developer`
+### 3a. `dotnet-developer`
 
 Prompt: *"Add a new entity `Customer` end-to-end in the .NET solution."*
 
@@ -77,7 +77,7 @@ model → Mapper → AppDatabase → ViewModel → XAML Page → Shell → MauiP
 DI) via `maui-architecture`.
 
 Negative prompt: *"Create a GraphQL endpoint for `Customer`."*
-Expected: `"Out of scope. Defer to dotnet-senior-developer."`
+Expected: `"Out of scope. Defer to dotnet-developer."`
 
 CI prompt: *"How do we build the APK?"*
 Expected: cites `workflows/build-apk.yml` without rewriting the pipeline.
@@ -91,7 +91,7 @@ Expected: types → service → context → hook → provider registration per
 context methods, and class-based service with `handleResponse`.
 
 Negative prompt: *"Add a .NET controller for `Achievement`."*
-Expected: `"Out of scope. Defer to dotnet-senior-developer."`
+Expected: `"Out of scope. Defer to dotnet-developer."`
 
 ### 3d. `qa-developer`
 
@@ -101,7 +101,7 @@ Expected: tests under the single `<Solution>.Tests` project, mirroring the
 source folder path, using xUnit conventions from `dotnet-test`.
 
 Negative prompt: *"Now refactor `CustomerService` to use a repository."*
-Expected: `"Out of scope. Defer to dotnet-senior-developer."`
+Expected: `"Out of scope. Defer to dotnet-developer."`
 
 ### 3e. `analyst`
 
@@ -116,7 +116,7 @@ Diagram prompt: *"Adicione um diagrama de arquitetura ao guia de deploy."*
 Expected: a Mermaid block appended to `docs/GUIA_DE_DEPLOY.pt-BR.md`.
 
 Negative prompt: *"Implement the payment controller."*
-Expected: `"Fora de escopo. Defer to dotnet-senior-developer."`
+Expected: `"Fora de escopo. Defer to dotnet-developer."`
 
 ## 4. Verify relocated scripts
 

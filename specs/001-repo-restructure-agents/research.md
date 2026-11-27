@@ -79,7 +79,7 @@ Mapping (per agent):
 
 | Agent | Composed skills' allowed-tools union | Agent `tools` |
 |-------|---------------------------------------|---------------|
-| `dotnet-senior-developer` | Read, Grep, Glob, Bash, Write, Edit, Task (from `dotnet-architecture`, `dotnet-test`) | `Read, Grep, Glob, Bash, Write, Edit, Task, Skill` |
+| `dotnet-developer` | Read, Grep, Glob, Bash, Write, Edit, Task (from `dotnet-architecture`, `dotnet-test`) | `Read, Grep, Glob, Bash, Write, Edit, Task, Skill` |
 | `dotnet-mobile-developer` | Same as backend skills + MAUI (Read, Grep, Glob, Bash, Write, Edit, Task) | `Read, Grep, Glob, Bash, Write, Edit, Task, Skill` |
 | `frontend-react-developer` | Read, Grep, Glob, Write, Edit, Task (React skills) | `Read, Grep, Glob, Write, Edit, Task, Skill` |
 | `qa-developer` | Read, Grep, Glob, Bash, Write, Edit, Task (from `dotnet-test`) | `Read, Grep, Glob, Bash, Write, Edit, Task, Skill` |

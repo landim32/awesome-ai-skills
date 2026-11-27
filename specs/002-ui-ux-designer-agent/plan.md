@@ -7,7 +7,7 @@
 
 Criar um novo agente de Claude Code em `agents/ui-ux-pro-max-designer.md` que compõe sete skills de design (`banner-design`, `brand`, `design`, `design-system`, `slides`, `ui-styling`, `ui-ux-pro-max`) para entregar direção visual, tokens, mockups, specs de componente, banners, slides, logo, CIP e ícones — **sem escrever `.tsx`** (código React fica com `frontend-react-developer`). O agente segue a convenção flat-file dos agentes irmãos, declara `tools: Read, Grep, Glob, Bash, Write, Edit, Task, Skill, WebFetch`, usa a regra "respond in the language of the request" e cita o repositório upstream `https://github.com/nextlevelbuilder/ui-ux-pro-max-skill` como origem conceitual.
 
-Escopo expandido: normalizar a seção `## Output Language` dos 5 agentes existentes (`frontend-react-developer`, `dotnet-senior-developer`, `dotnet-mobile-developer`, `qa-developer`, `analyst`) para a mesma regra bilíngue.
+Escopo expandido: normalizar a seção `## Output Language` dos 5 agentes existentes (`frontend-react-developer`, `dotnet-developer`, `dotnet-mobile-developer`, `qa-developer`, `analyst`) para a mesma regra bilíngue.
 
 Abordagem técnica: trata-se de autoria de artefato AI (Markdown + YAML frontmatter), sem runtime, sem dependências de terceiros, sem storage. Os "contratos" do sistema são a schema de frontmatter (Constitution §V) e os snippets de texto canônicos (atribuição, Output Language, Boundaries name-and-stop).
 
@@ -74,7 +74,7 @@ Este feature **não** cria código-fonte executável. Toca apenas artefatos AI d
 agents/
 ├── ui-ux-pro-max-designer.md    # NEW — arquivo do agente (≤ 100 linhas)
 ├── frontend-react-developer.md   # MODIFY — seção `## Output Language`
-├── dotnet-senior-developer.md    # MODIFY — seção `## Output Language`
+├── dotnet-developer.md    # MODIFY — seção `## Output Language`
 ├── dotnet-mobile-developer.md    # MODIFY — seção `## Output Language`
 ├── qa-developer.md               # MODIFY — seção `## Output Language`
 └── analyst.md                    # MODIFY — `## Output Language` + ajuste de frontmatter.description

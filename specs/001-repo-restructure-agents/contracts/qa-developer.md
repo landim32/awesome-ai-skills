@@ -20,7 +20,7 @@ tools: Read, Grep, Glob, Bash, Write, Edit, Task, Skill
 
 ## Required Boundaries / Out of Scope bullets
 
-- Production code (non-test) changes — defer to `dotnet-senior-developer`, `dotnet-mobile-developer`, or `frontend-react-developer` depending on the target layer.
+- Production code (non-test) changes — defer to `dotnet-developer`, `dotnet-mobile-developer`, or `frontend-react-developer` depending on the target layer.
 - Writing integration tests that require infrastructure not declared in `dotnet-test` — call out the gap and defer to the feature owner.
 - Authoring documentation in `docs/` — defer to `analyst`.
 
@@ -39,6 +39,6 @@ tools: Read, Grep, Glob, Bash, Write, Edit, Task, Skill
 ## Acceptance tests specific to this agent
 
 1. A request "add unit tests for `CustomerService`" → the agent creates test files under `<Solution>.Tests/Domain/CustomerServiceTests.cs` (or mirrored path) matching `dotnet-test`'s conventions.
-2. A request "refactor `CustomerService` to use a repository" → the agent defers to `dotnet-senior-developer`.
+2. A request "refactor `CustomerService` to use a repository" → the agent defers to `dotnet-developer`.
 3. A request "add tests for a React component" → the agent declares the gap (no React test skill exists yet) and defers to the human.
 4. The file passes every check in [agent-schema.md](./agent-schema.md) §"Acceptance test".

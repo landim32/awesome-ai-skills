@@ -37,7 +37,7 @@ rg -c "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" agents/ui-ux-pro
 ### 1.5 Output Language canonical block present in ALL 6 agents (SC-010)
 
 ```bash
-for f in agents/ui-ux-pro-max-designer.md agents/frontend-react-developer.md agents/dotnet-senior-developer.md agents/dotnet-mobile-developer.md agents/qa-developer.md agents/analyst.md; do
+for f in agents/ui-ux-pro-max-designer.md agents/frontend-react-developer.md agents/dotnet-developer.md agents/dotnet-mobile-developer.md agents/qa-developer.md agents/analyst.md; do
   rg -q "Respond in the language of the request" "$f" || echo "MISSING: $f"
 done
 ```
@@ -86,7 +86,7 @@ Invoke the agent via Claude Code in a scratch directory and verify.
 **Prompt**: `"Create a C# controller for user registration."`
 
 **Expect**:
-- Response names `dotnet-senior-developer` by its frontmatter `name` field.
+- Response names `dotnet-developer` by its frontmatter `name` field.
 - ≤ 3 sentences.
 - No code produced.
 

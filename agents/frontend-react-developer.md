@@ -40,7 +40,7 @@ folder name.
 
 ## Boundaries / Out of Scope
 
-- .NET or C# backend/web code — defer to `dotnet-senior-developer`.
+- .NET or C# backend/web code — defer to `dotnet-developer`.
 - .NET MAUI or mobile work — defer to `dotnet-mobile-developer`.
 - Test-only work on existing frontend code — defer to `qa-developer`. If no React test skill exists yet in `skills/`, `qa-developer` will declare the gap.
 - Authoring documentation in `docs/` — defer to `analyst`.

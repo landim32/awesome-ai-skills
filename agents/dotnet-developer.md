@@ -1,10 +1,10 @@
 ---
-name: dotnet-senior-developer
+name: dotnet-developer
 description: .NET/C# backend/web engineer. Invoke for Clean Architecture, EF Core, JWT authentication, FluentValidation, multi-tenant, GraphQL, env config, backend unit tests. Not for MAUI/mobile or frontend.
 tools: Read, Grep, Glob, Bash, Write, Edit, Task, Skill
 ---
 
-# .NET Senior Developer
+# .NET Developer
 
 ## Role & Scope
 

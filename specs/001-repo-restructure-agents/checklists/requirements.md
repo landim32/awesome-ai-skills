@@ -71,12 +71,12 @@
 - **Scope impact**: Agent count moved from four to five; `maui-architecture`
   is now in scope (previously explicitly excluded).
 - **Conflict resolved**: Earlier assumption "MAUI is out of scope for the
-  .NET Senior Developer agent. A future MAUI-specialist agent may be
+  .NET Developer agent. A future MAUI-specialist agent may be
   created separately." is now realized by US6/FR-012b. Assumption was
   rewritten to describe the split of responsibilities.
 - **New FR-012b and FR-018** added; **FR-008** updated to list five
   agents; **SC-003** and **SC-005** updated; **SC-008** added to cover
-  non-overlap between Senior and Mobile agents.
+  non-overlap between .NET Developer and Mobile agents.
 - **Validation**: All checklist items still pass. No new
   `[NEEDS CLARIFICATION]` markers introduced.
 

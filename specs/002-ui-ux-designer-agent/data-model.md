@@ -33,7 +33,7 @@ Arquivo único sob `agents/<kebab-case-name>.md`.
 - `tools` exatamente igual ao conjunto definido, sem duplicatas, ordem livre.
 - `attribution_line` bate exatamente o snippet em `contracts/attribution.snippet.md`.
 - Seção `## Output Language` bate exatamente o snippet em `contracts/output-language.snippet.md`.
-- Seção `## Boundaries / Out of Scope` cita pelo `name` frontmatter os 5 agentes irmãos: `frontend-react-developer`, `dotnet-senior-developer`, `dotnet-mobile-developer`, `qa-developer`, `analyst`.
+- Seção `## Boundaries / Out of Scope` cita pelo `name` frontmatter os 5 agentes irmãos: `frontend-react-developer`, `dotnet-developer`, `dotnet-mobile-developer`, `qa-developer`, `analyst`.
 - Seção `## Composed Skills` lista exatamente as 7 skills: `banner-design`, `brand`, `design`, `design-system`, `slides`, `ui-styling`, `ui-ux-pro-max`. Cada uma com 1 frase "when to invoke".
 - Zero blocos de código `.tsx`/`.jsx`/`.ts` no corpo (SC-009 preventivo).
 
@@ -90,7 +90,7 @@ Referência usada pela regra name-and-stop (FR-005, FR-006, FR-018).
 | Sibling | Defer scope |
 |---|---|
 | `frontend-react-developer` | Código `.tsx` React, arquitetura de feature module (Types → Service → Context → Hook → Provider), i18n, modais, alerts. |
-| `dotnet-senior-developer` | Backend .NET/C# e Web. |
+| `dotnet-developer` | Backend .NET/C# e Web. |
 | `dotnet-mobile-developer` | .NET MAUI e mobile nativo. |
 | `qa-developer` | Trabalho apenas de testes (unit tests, xUnit). |
 | `analyst` | Documentação em `docs/` (autoria de prosa). |

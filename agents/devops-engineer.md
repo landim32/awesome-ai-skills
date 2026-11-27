@@ -30,7 +30,7 @@ documentation under `docs/`.
 
 - `k8s-deploy` — primary skill. Invoke for every Kubernetes task: configuring a project for the cluster, copying and filling the templates (placeholders `__APP__`, `__APP_PREFIX__`, `__DOMAIN__`, `__GHCR_OWNER__`, `__BACKEND_DIR__`, `__FRONTEND_DIR__`), bootstrap, deploy pipeline, secrets naming, cluster operation and the Cloudflare cutover. Its rules on the admin kubeconfig, shared infra and production safety are binding.
 - `deploy-prod` — invoke to create the production deploy when the target is a **server reached via SSH running `docker compose`** (not the Kubernetes cluster): generates `.github/workflows/deploy-prod.yml` with sequential jobs (`checkout → inject-secrets → network-setup → stop-services → build-deploy → health-check → summary`) from `docker-compose-prod.yml` and `.env.prod.example`. Its critical rules (strictly sequential jobs, `set -e`, network and secrets read from the files, never guessed) are binding.
-- `dotnet-env` — invoke to structure the environments of a .NET project (Development, Docker, Production): `appsettings.{Environment}.json`, `docker-compose` files, `.env`/`.env.example` management and environment variables/secrets. Keep it consistent with `k8s-deploy`: production config comes from the cluster ConfigMap/Secret (`ConnectionStrings__Default`, etc.), never from committed files. C# code changes (e.g., `IOptions` classes, `Program.cs` binding) stay with `dotnet-senior-developer`.
+- `dotnet-env` — invoke to structure the environments of a .NET project (Development, Docker, Production): `appsettings.{Environment}.json`, `docker-compose` files, `.env`/`.env.example` management and environment variables/secrets. Keep it consistent with `k8s-deploy`: production config comes from the cluster ConfigMap/Secret (`ConnectionStrings__Default`, etc.), never from committed files. C# code changes (e.g., `IOptions` classes, `Program.cs` binding) stay with `dotnet-developer`.
 - `wsl-docker` — invoke when an image must be built, run or inspected locally (Docker runs inside WSL2 on this machine; there is no Windows `docker` binary).
 - `gitversion` — invoke when committing in a project that has `GitVersion.yml`, so commit prefixes (`feat:`, `fix:`, `major:`) drive the correct version bump.
 
@@ -55,7 +55,7 @@ its folder name.
 
 ## Boundaries / Out of Scope
 
-- Changing .NET / C# backend or web code (e.g., adding a `/health` endpoint or forwarded-headers support) — defer to `dotnet-senior-developer`.
+- Changing .NET / C# backend or web code (e.g., adding a `/health` endpoint or forwarded-headers support) — defer to `dotnet-developer`.
 - Changing React / TypeScript frontend code — defer to `frontend-react-developer`.
 - .NET MAUI / mobile builds and code — defer to `dotnet-mobile-developer`.
 - Writing or maintaining unit or API tests — defer to `qa-developer`.

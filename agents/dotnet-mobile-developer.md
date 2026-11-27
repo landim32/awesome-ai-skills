@@ -17,7 +17,7 @@ AutoMapper profiles, AppDatabase registration, ViewModels backed by
 `MauiProgram.cs` DI.
 
 Your scope does **not** include pure backend/web work (no UI, no device
-concerns) — that belongs to `dotnet-senior-developer`.
+concerns) — that belongs to `dotnet-developer`.
 
 ## Composed Skills
 
@@ -41,7 +41,7 @@ its folder name.
 
 ## Boundaries / Out of Scope
 
-- Pure backend or web work with no mobile presentation (e.g., "create a GraphQL endpoint", "build a Web API controller with no mobile client change") — defer to `dotnet-senior-developer`.
+- Pure backend or web work with no mobile presentation (e.g., "create a GraphQL endpoint", "build a Web API controller with no mobile client change") — defer to `dotnet-developer`.
 - React, TypeScript, or any web UI — defer to `frontend-react-developer`.
 - Test-only work on an existing mobile class with no production code change — defer to `qa-developer`.
 - Authoring documentation in `docs/` — defer to `analyst`.

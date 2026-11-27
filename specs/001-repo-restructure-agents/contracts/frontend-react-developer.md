@@ -24,7 +24,7 @@ tools: Read, Grep, Glob, Write, Edit, Task, Skill
 
 ## Required Boundaries / Out of Scope bullets
 
-- .NET / C# backend or web API work — defer to `dotnet-senior-developer`.
+- .NET / C# backend or web API work — defer to `dotnet-developer`.
 - .NET MAUI / mobile work — defer to `dotnet-mobile-developer`.
 - Test-only work on existing frontend code — defer to `qa-developer` (QA agent will coordinate if React-specific tests are later added as skills).
 - Authoring documentation in `docs/` — defer to `analyst`.
@@ -47,5 +47,5 @@ tools: Read, Grep, Glob, Write, Edit, Task, Skill
 1. A request "scaffold a new `Achievement` entity in the frontend" → the agent follows the types/service/context/hook/provider pattern from `react-architecture`.
 2. A request "add a confirmation dialog for delete" → the agent uses `react-modal` and does NOT emit `window.confirm()`.
 3. A request "design a landing page for the product" → the agent uses `frontend-design` and commits to a distinctive aesthetic (not generic).
-4. A request "add a .NET controller for achievements" → the agent defers to `dotnet-senior-developer`.
+4. A request "add a .NET controller for achievements" → the agent defers to `dotnet-developer`.
 5. The file passes every check in [agent-schema.md](./agent-schema.md) §"Acceptance test".

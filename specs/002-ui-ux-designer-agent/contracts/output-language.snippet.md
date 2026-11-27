@@ -20,7 +20,7 @@ Respond in the language of the request. Match the user's language (e.g., Portugu
 |---|---|---|
 | `agents/ui-ux-pro-max-designer.md` | does not exist yet | contains snippet (new file) |
 | `agents/frontend-react-developer.md` | `## Output Language\n\nEnglish.` | contains snippet |
-| `agents/dotnet-senior-developer.md` | `## Output Language\n\nEnglish.` | contains snippet |
+| `agents/dotnet-developer.md` | `## Output Language\n\nEnglish.` | contains snippet |
 | `agents/dotnet-mobile-developer.md` | (verify current value) | contains snippet |
 | `agents/qa-developer.md` | (verify current value) | contains snippet |
 | `agents/analyst.md` | (verify current value) + description line removed | contains snippet |
