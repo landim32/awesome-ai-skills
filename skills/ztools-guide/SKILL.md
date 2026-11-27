@@ -1,10 +1,16 @@
 ---
 name: ztools-guide
-description: Guides how to integrate the zTools package for ChatGPT, DALL-E image generation, file upload (S3), slug generation, email sending, and document validation in a .NET 8 project. Use when the user wants to use AI features, upload files, generate slugs, send emails, or understand zTools integration.
+description: "LEGACY — zTools is a legacy system; do not use it in new projects or features. Use only to maintain or migrate an existing project that already depends on the zTools package (ChatGPT, DALL-E, S3 upload, slug, email, document validation clients)."
 allowed-tools: Read, Grep, Glob, Bash, Write, Edit, Task
 ---
 
-# zTools Integration Guide
+# zTools Integration Guide (LEGACY)
+
+> ⚠️ **Legacy.** zTools is a legacy system and MUST NOT be used in new projects or new features.
+> Implement these capabilities directly in the project instead (e.g., an AppService in
+> `Infra/AppServices` per `dotnet-architecture`, calling the provider SDK/API: OpenAI, S3, email
+> provider). Use this guide only to understand, maintain or migrate away from an existing zTools
+> integration. When asked to *add* zTools to a project, stop and propose the direct implementation.
 
 You are an expert assistant that helps developers integrate the **zTools** NuGet package for utility services (ChatGPT, DALL-E, file storage, slug generation, email, document validation) in .NET 8 Web API projects.
 
