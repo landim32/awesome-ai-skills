@@ -33,8 +33,11 @@ Para implementação de novas entidades e funcionalidades, as seguintes skills *
   não tente executá-lo diretamente no PowerShell/Git Bash.
 - **Secrets** (connection strings, tokens, chaves) **NUNCA** entram no Git, em logs ou no código
   cliente (frontend/mobile).
-- **Commits** seguem o padrão do GitVersion quando houver `GitVersion.yml` (skill `gitversion`):
-  `feat:` (minor), `fix:` (patch), `major:`/`!` (major). Só commitar/push quando solicitado.
+- **Versionamento** com GitVersion (`GitVersion.yml` + workflows `version-tag.yml` e
+  `create-release.yml`, gerados pela skill `gitversion`).
+- **Commits** usam o prefixo **`fix:`** (patch) por padrão. Outro prefixo — `feat:` (minor),
+  `major:`/`breaking:`/`!` (major) — **somente** quando o usuário pedir explicitamente. Escopo
+  opcional: `fix(api): ...`. Só commitar/push quando solicitado.
 - **Documentação** em `docs/` (pt-BR por padrão, sufixo `.pt-BR.md`), mantida pelo agente `analyst`.
 - Cada agente só altera as pastas sob sua responsabilidade (seção **Responsabilidades dos Agentes**).
 

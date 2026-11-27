@@ -1,6 +1,6 @@
 ---
 name: generate-constitution
-description: "Gera a constitution do projeto (.specify/memory/constitution.md) via /speckit.constitution a partir de uma descrição do projeto: site (só frontend), webapp (backend + frontend), app mobile (backend + app) ou só API. Monta stack, convenções, estrutura de pastas (backend/, frontend/, mobile/ ou raiz) e responsabilidades dos agentes, pergunta o que ficar em aberto e referencia a constitution no CLAUDE.md."
+description: "Gera a constitution do projeto (.specify/memory/constitution.md) via /speckit.constitution a partir de uma descrição do projeto: site (só frontend), webapp (backend + frontend), app mobile (backend + app) ou só API. Monta stack, convenções, estrutura de pastas (backend/, frontend/, mobile/ ou raiz) e responsabilidades dos agentes, pergunta o que ficar em aberto, referencia a constitution no CLAUDE.md e configura o GitVersion (commits com fix: por padrão)."
 allowed-tools: Read, Grep, Glob, Bash, Write, Edit, Skill, AskUserQuestion
 user-invocable: true
 ---
@@ -134,20 +134,37 @@ stack, convenções, estrutura de pastas e responsabilidades dos agentes.
 - Componentes: <ex.: backend (`backend/`) + frontend (`frontend/`)>
 - Agentes: <ex.: `dotnet-developer` → `backend/`; `frontend-react-developer` → `frontend/`; ...>
 - Alterações na constitution só via `/speckit.constitution` (ou `/generate-constitution`).
+- Commits com prefixo `fix:` por padrão (GitVersion); outro prefixo (`feat:`, `major:`...) só quando o
+  usuário pedir.
 ```
 
 Não duplique o conteúdo da constitution no `CLAUDE.md` — só a referência e o resumo acima.
 
-### 7. Agentes no projeto
+### 7. Versionamento (GitVersion)
+
+Ao inicializar o projeto, invoque a skill `gitversion` (ferramenta `Skill`) no modo de configuração para
+gerar os arquivos de versionamento: `GitVersion.yml`, `.github/workflows/version-tag.yml` e
+`.github/workflows/create-release.yml`.
+
+- Se algum desses arquivos já existir, siga a regra da própria skill (mostrar a diferença e perguntar
+  antes de substituir) — nunca sobrescreva sem confirmação.
+- Se o diretório ainda não for um repositório git, avise o usuário e pule esta etapa (não rode
+  `git init` sem pedido).
+- **Convenção de commits do projeto:** prefixo **`fix:`** (bump patch) por padrão em todo commit;
+  use outro prefixo (`feat:`, `major:`, `breaking:` ou `!`) **somente** quando o usuário pedir
+  explicitamente. Escopo opcional entre parênteses é aceito (ex.: `fix(api): ...`).
+
+### 8. Agentes no projeto
 
 Verifique se os agentes citados existem em `.claude/agents/<nome>.md`. Os que faltarem: liste-os e
 sugira instalá-los com a skill `install` (a partir do repositório `awesome-ai-skills`). Não instale
 sem o usuário pedir.
 
-### 8. Resumo final
+### 9. Resumo final
 
 Informe: classificação e layout escolhidos, respostas usadas, versão da constitution, arquivos
-alterados (constitution, templates do Spec Kit, `CLAUDE.md`), TODOs pendentes e agentes faltando.
+alterados (constitution, templates do Spec Kit, `CLAUDE.md`, arquivos do GitVersion), TODOs pendentes
+e agentes faltando.
 Não faça commit nem push sem pedido.
 
 ## Regras
@@ -155,4 +172,5 @@ Não faça commit nem push sem pedido.
 - A constitution sai em **pt-BR**; identificadores, comandos e caminhos ficam em inglês.
 - Não copie seções de componentes ausentes (ex.: site só frontend não tem seção de banco de dados).
 - Não altere o código do projeto — esta skill só escreve a constitution, os templates do Spec Kit
-  (via `speckit.constitution`) e o `CLAUDE.md`.
+  (via `speckit.constitution`), o `CLAUDE.md` e os arquivos de versionamento (via `gitversion`).
+- Commits desta skill (quando o usuário pedir) também usam o prefixo `fix:`, salvo pedido diferente.
