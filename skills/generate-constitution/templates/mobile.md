@@ -41,6 +41,8 @@ Responsável: `dotnet-mobile-developer` (design: `ux-designer`). O app consome a
 
 ### Autenticação e Segurança
 
+- Header `Authorization: Bearer {token}` nas chamadas à API (JWT do backend, skill `dotnet-auth`);
+  ao receber **401**, limpar a sessão e voltar para o login.
 - Tokens e dados sensíveis **só** em `SecureStorage`; `Preferences` apenas para configurações
   não sensíveis.
 - **NUNCA** secrets ou API keys hardcoded no app.

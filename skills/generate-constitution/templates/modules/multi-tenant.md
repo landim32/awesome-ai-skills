@@ -1,6 +1,6 @@
 ## Multi-Tenant (backend)
 
-Responsável: `dotnet-senior-developer` (skill `dotnet-multi-tenant`).
+Responsável: `dotnet-developer` (skill `dotnet-multi-tenant`).
 
 - Isolamento por **banco de dados separado por tenant** (ConnectionString dinâmica) e `JwtSecret`
   próprio por tenant, configurados em `Tenants:<TenantId>` no `appsettings.json`.

@@ -17,6 +17,7 @@ Para implementação de novas entidades e funcionalidades, as seguintes skills *
 | Skill | Quando usar | Invocação |
 |---|---|---|
 | **dotnet-architecture** | Criar/modificar entidades, services, repositories, DTOs, migrations, DI no backend | `/dotnet-architecture` |
+| **dotnet-auth** | Criar/alterar autenticação de usuários (JWT Bearer, cadastro, login, `me`, hash de senha, roles) no backend | `/dotnet-auth` |
 | **react-architecture** | Criar Types, Service, Context, Hook e registrar Provider no frontend | `/react-architecture` |
 | **maui-architecture** | Criar/modificar Models SQLite, AutoMapper profiles, ViewModels, Pages XAML, Shell e DI no `MauiProgram.cs` | `/maui-architecture` |
 | **k8s-deploy** | Configurar e operar o deploy no cluster Kubernetes (se o deploy for no cluster) | `/k8s-deploy` |

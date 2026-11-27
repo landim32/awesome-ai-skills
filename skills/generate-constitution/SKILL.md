@@ -77,7 +77,7 @@ descrição ou do código; a opção recomendada primeiro). Pontos típicos:
 |---|---|---|
 | Classificação | a descrição não deixa claro se há backend (ex.: "site com área do cliente", "app offline") | conforme tabela da etapa 2 |
 | Nome do projeto | não há nome na descrição nem no repositório | — |
-| Autenticação | há backend | Basic Authentication (padrão dos templates); alternativa: JWT Bearer próprio (skill `dotnet-auth`). **Não** oferecer NAuth (legado) |
+| Autenticação | há backend e a descrição não deixa claro se há login de usuários | JWT Bearer próprio (skill `dotnet-auth`, padrão dos templates); alternativa: API sem autenticação de usuários. **Não** oferecer NAuth (legado) |
 | Multi-tenant | há backend e a descrição fala em clientes/empresas/tenants isolados | não |
 | Deploy | sempre | cluster Kubernetes da emagine (`modules/k8s-deploy.md`); alternativas: servidor via SSH + docker compose (`modules/deploy-ssh.md`, skill `deploy-prod`) ou sem deploy definido ainda |
 | Redes sociais | a descrição fala em postar/integrar redes sociais | BazzucaMedia (`modules/external-bazzuca.md`) |
@@ -96,7 +96,7 @@ constitution em vez de chutar.
 3. Em `structure.md` e `agents.md`, **mantenha só os blocos/linhas aplicáveis** (cada um diz quando
    entra) e remova os comentários `<!-- ... -->` de instrução.
 4. Na tabela **Skills Obrigatórias** de `base.md`, deixe só as linhas dos componentes presentes.
-5. Ajuste o que as respostas da etapa 3 mudaram (ex.: autenticação JWT em vez de Basic, idiomas).
+5. Ajuste o que as respostas da etapa 3 mudaram (ex.: API sem autenticação de usuários, expiração do token diferente de 90 dias, idiomas).
 6. Salve o rascunho **fora do repositório** (diretório temporário da sessão / scratchpad), ex.:
    `$SCRATCH/constitution-draft.md`.
 
@@ -132,7 +132,7 @@ e é **inegociável**: leia-a antes de planejar ou implementar qualquer mudança
 stack, convenções, estrutura de pastas e responsabilidades dos agentes.
 
 - Componentes: <ex.: backend (`backend/`) + frontend (`frontend/`)>
-- Agentes: <ex.: `dotnet-senior-developer` → `backend/`; `frontend-react-developer` → `frontend/`; ...>
+- Agentes: <ex.: `dotnet-developer` → `backend/`; `frontend-react-developer` → `frontend/`; ...>
 - Alterações na constitution só via `/speckit.constitution` (ou `/generate-constitution`).
 ```
 

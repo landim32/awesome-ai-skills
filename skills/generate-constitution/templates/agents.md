@@ -9,7 +9,7 @@ escopo DEVE declarar que ela está fora do escopo, indicar o agente responsável
 |---|---|---|---|
 | `analyst` | Documentação, README, diagramas Mermaid; especificações e análise de requisitos | `docs/`, `README.md` | sempre |
 | `ux-designer` | Direção visual, design tokens, mockups HTML/CSS, specs de componentes, ícones/banners — **nunca** código `.tsx`/XAML | `docs/design/` (ou pasta de design definida) | houver frontend ou mobile |
-| `dotnet-senior-developer` | API .NET: Clean Architecture, EF Core, migrations, validação, autenticação, configuração | `__BACKEND_DIR__/` | houver backend |
+| `dotnet-developer` | API .NET: Clean Architecture, EF Core, migrations, validação, autenticação JWT (`dotnet-auth`), configuração | `__BACKEND_DIR__/` | houver backend |
 | `frontend-react-developer` | Frontend React + TypeScript: types, services, contexts, hooks, páginas, i18n, implementação dos designs do `ux-designer` | `__FRONTEND_DIR__/` | houver frontend |
 | `dotnet-mobile-developer` | App .NET MAUI: Models SQLite, ViewModels, Pages XAML, Shell, DI, build do APK | `__MOBILE_DIR__/` | houver mobile |
 | `qa-developer` | Testes unitários (`<Solution>.Tests`) e testes de API (`<Solution>.ApiTests`) — só testes | projetos de teste em `__BACKEND_DIR__/` | houver backend |

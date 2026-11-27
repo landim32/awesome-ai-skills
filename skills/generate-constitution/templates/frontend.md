@@ -45,7 +45,8 @@ Responsável: `frontend-react-developer` (design: `ux-designer`).
 
 ### Autenticação e Segurança
 
-- Header `Authorization` no mesmo esquema do backend (quando houver).
+- Header `Authorization: Bearer {token}` em toda chamada autenticada (JWT do backend, skill `dotnet-auth`).
+- Guardar o `expiresAt` do login; ao receber **401**, limpar a sessão e redirecionar para o login.
 - **NUNCA** armazenar tokens em cookies — usar localStorage.
 - **NUNCA** expor connection strings ou secrets no frontend.
 

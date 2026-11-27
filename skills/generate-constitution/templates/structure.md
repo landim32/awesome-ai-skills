@@ -22,7 +22,7 @@ ficar fora da sua pasta, e a raiz contém só arquivos de repositório, document
 
 ```text
 /
-├── backend/              # API .NET (dotnet-senior-developer)
+├── backend/              # API .NET (dotnet-developer)
 ├── frontend/             # aplicação web React (frontend-react-developer)
 ├── mobile/               # app .NET MAUI (dotnet-mobile-developer)
 ├── docs/                 # documentação (analyst)

@@ -10,6 +10,6 @@ Responsável: `devops-engineer` (skills `deploy-prod` e `dotnet-env`).
   estritamente sequenciais `checkout → inject-secrets → network-setup → stop-services →
   build-deploy → health-check → summary`, cada script SSH começando com `set -e`.
 - Secrets no GitHub: conexão `PROD_SSH_HOST`, `PROD_SSH_USER`, `PROD_SSH_PASSWORD`, `PROD_SSH_PORT`
-  e uma secret por variável do `.env.prod.example`.
+  e uma secret por variável do `.env.prod.example` (incluindo `Jwt__Secret` quando houver autenticação).
 - Toda variável nova de produção DEVE entrar no `.env.prod.example` e na pipeline (via
   `deploy-prod`) no mesmo PR.

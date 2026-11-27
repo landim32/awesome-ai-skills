@@ -1,6 +1,6 @@
 ## Backend (`__BACKEND_DIR__/`)
 
-Responsável: `dotnet-senior-developer` (testes: `qa-developer`).
+Responsável: `dotnet-developer` (testes: `qa-developer`).
 
 ### Stack Tecnológica
 
@@ -13,7 +13,7 @@ Responsável: `dotnet-senior-developer` (testes: `qa-developer`).
 
 - **NÃO** introduzir ORMs alternativos (Dapper, etc.) — EF Core é o único ORM permitido.
 - Skills de apoio: `dotnet-env` (ambientes Development/Docker/Production — arquivos de ambiente
-  pelo `devops-engineer`, classes `IOptions` pelo `dotnet-senior-developer`),
+  pelo `devops-engineer`, classes `IOptions` pelo `dotnet-developer`),
   `dotnet-fluent-validation` (validação),
   `dotnet-test` / `dotnet-test-api` (testes, via `qa-developer`).
 
@@ -51,18 +51,27 @@ Responsável: `dotnet-senior-developer` (testes: `qa-developer`).
 
 ### Autenticação e Segurança
 
-<!-- Padrão: Basic Authentication. Troque a tabela se o usuário escolheu JWT Bearer
-     (skill dotnet-auth: `Authorization: Bearer {token}`, `AddJwtBearer`, expiração `Jwt:ExpirationDays` = 90,
-     configurável). NAuth é legado: não usar. -->
+<!-- Padrão: JWT Bearer da skill dotnet-auth. Se o projeto não tiver login de usuários, troque esta
+     seção por "API sem autenticação de usuários" e remova as linhas Jwt__* das variáveis.
+     NAuth é legado: não usar. -->
+
+Autenticação de usuários **sempre** pela skill `dotnet-auth` — **NÃO** criar esquemas próprios e
+**NÃO** usar NAuth (legado).
 
 | Aspecto | Padrão |
 |---|---|
-| Esquema | Basic Authentication |
-| Header | `Authorization: Basic {token}` |
-| Handler | `AuthenticationHandler` customizado registrado no DI |
-| Proteção de rotas | Atributo `[Authorize]` nos controllers |
+| Esquema | JWT Bearer (`JwtBearerDefaults.AuthenticationScheme`), HS256 |
+| Header | `Authorization: Bearer {token}` |
+| Expiração | **90 dias** por padrão (`Jwt:ExpirationDays`), configurável por ambiente |
+| Secret | `Jwt:Secret` com ≥ 32 bytes; a API não sobe sem ele |
+| Claims | `sub` (userId), `email`, `name`, `jti`, `role` |
+| Senha | `PasswordHasher` do ASP.NET Core Identity (PBKDF2 com salt) |
+| Endpoints | `POST api/auth/register`, `POST api/auth/login`, `GET api/auth/me` |
+| Usuário logado | `User.GetUserId()` (claim `sub`) — nunca do body/query |
+| Proteção de rotas | `[Authorize]` na classe do controller, `[AllowAnonymous]` explícito nos públicos |
 
-- **NUNCA** expor connection strings ou secrets em respostas da API.
+- **NUNCA** logar senha, hash ou token, nem expor connection strings ou secrets em respostas da API.
+- Login inválido devolve sempre a mesma mensagem genérica (não revelar se o email existe).
 - Controllers com dados sensíveis DEVEM ter `[Authorize]`.
 - CORS `AllowAnyOrigin` apenas em Development.
 - A API confia em forwarded headers (`X-Forwarded-For`/`X-Forwarded-Proto`) e expõe `/health`.
@@ -73,6 +82,9 @@ Responsável: `dotnet-senior-developer` (testes: `qa-developer`).
 |---|---|---|
 | `ConnectionStrings__Default` | Sim | Connection string PostgreSQL do `__PROJECT__` |
 | `ASPNETCORE_ENVIRONMENT` | Sim | Development, Docker, Production |
+| `Jwt__Secret` | Sim | Secret de assinatura do JWT (≥ 32 bytes; só em secrets, nunca no Git) |
+| `Jwt__Issuer` / `Jwt__Audience` | Não | Padrão: `__PROJECT_SLUG__` |
+| `Jwt__ExpirationDays` | Não | Expiração do token em dias (padrão `90`) |
 
 ### Tratamento de Erros
 
@@ -85,5 +97,6 @@ catch (Exception ex) { return StatusCode(500, ex.Message); }
 
 - [ ] Utilizou a skill `dotnet-architecture` para novas entidades
 - [ ] Tabelas e colunas seguem snake_case no PostgreSQL
+- [ ] Autenticação feita com a skill `dotnet-auth` (sem NAuth)
 - [ ] Controllers com dados sensíveis possuem `[Authorize]`
 - [ ] Testes criados/atualizados pelo `qa-developer`
